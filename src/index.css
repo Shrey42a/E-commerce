@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  
+}
+
+.container .card .face{
+  width:300px;
+  height: 200px;
+  transition:.8s;
+  border-radius: 5%;
+  
+}
+
+.container .card .face.face1{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  z-index: 10;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+  transform: translateY(0);
+  box-shadow:
+    0px 0 40px #000000,
+    5px 25px 20px #222525;
+   
+}
+
+
+.container .card .face.face1 .content{
+  opacity: .1;
+  transition:  0.5s;
+  text-align: center;
+}
+
+.container .card:hover .face.face1 .content{
+  opacity: 1;
+}
+
+.container .card .face.face1 .content h3{
+  font-size: 4em;
+  color: #424242;
+  text-align: center;
+
+}
+
+.container .card .face.face2{
+   position: relative;
+   background: #aeadad;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+  transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p, a{
+  font-size: 20pt;
+  color:#212121;
+}
+
+.container .card .face.face2 .content a{
+  text-decoration:none;
+  background: #83d7dd;
+  box-shadow: 0 20px 50px rgba(0,0,0,.8);
+  color: #444546;
+  box-sizing: border-box;
+  border-radius: 5%;
+  padding: 10px;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+
+.container .card .face.face2 .content a:hover{
+  background: #00f0ec ;
+  color: #3b3b3b; 
+  box-shadow: 1px 1px 0, 2px 2px 0, 3px 3px 0, 4px 4px 0, 5px 5px 0, 6px 6px 0;
+}
+
+
+
+
+.btn_wrap {
+    position: relative;
+    display: flex;
+    box-shadow:
+    0px 0 10px #363636;
+    -webkit-box-pack: center;
+            justify-content: center;
+            align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 0 18px;
+    will-change: transform;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+span {
+    position: absolute;
+    z-index: 99;
+    width: 240px;
+    height: 72px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 2px;
+    color: #404040;
+    padding: 0 18px;
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.8s ease;
+}
+
+.container2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 240px;
+    height: 44px;
+    border-radius: 20px;
+    
+}
+.btn_wrap:hover {
+  box-shadow: 1px 1px 0, 2px 2px 0, 3px 3px 0, 4px 4px 0, 5px 5px 0, 6px 6px 0;
+  background-color: #ffc800;
+  color: #454545;
+}
+
+.btn_wrap:hover span {
+            transition-delay: .15s;
+            transform: translateX(-280px)
+}
+
+
+.ring
+{
+  width: 150px;
+  height: 150px;
+  box-shadow:
+    20px 10px 10px #363636;
+  background: transparent;
+  border: 1px solid #3c3c3c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #00db25;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #494646;
+  
+}
+.ring:before
+{
+  border: 3px solid transparent;
+  border-top: 3px solid #2eff35;
+  border-right: 3px solid #1ef901;
+  border-radius: 55%;
+  animation: animateC 1s linear infinite;
+}
+.ring span
+{
+  top: calc(10%);
+  left: 0%;
+  top: 33%;
+  width: 10%;
+  height: 8px;
+  background: transparent;
+  animation: animate 1s linear infinite;
+}
+.ring span:before
+{
+  content:'';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 40%;
+  background: #fff000;
+  top: -6px;
+  right: -5px;
+  box-shadow: 20 0 20px #fff000;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: rotate(45deg);
+  }
+  100%
+  {
+    transform: rotate(405deg);
+  }
+}
+
+
+
+
+
+
+.loader-04 {
+	border: 2px solid #00db07;
+	border-radius: 50%;
+	animation: 1s loader-04 linear infinite;
+	position: relative;
+  box-shadow:0 0 20px #fff000;
+	&:before {
+		content: '';
+		display: block;
+    box-shadow:0 0 20px #fff000;
+		width: 0px;
+		height: 0px;
+		position: absolute;
+		top: .2em;
+		left: 10%;
+		border: .8em solid currentcolor;
+		border-radius: 50%;
+	}
+}
+@keyframes loader-04 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+[class*="loader-"] {
+	display: inline-block;
+	width: 6em;
+	height: 6em;
+  font-size: 15px;
+	color: inherit;
+	vertical-align: middle;
+	pointer-events: none;
+}
