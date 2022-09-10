@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Card() {
   return (
@@ -13,7 +13,9 @@ function Card() {
           </div>
           <div className="face face2">
             <div className="content">
-              <Link to="/page" type="button">Show List</Link>
+              <Link title="Products" to="/page" type="button">
+                Show List
+              </Link>
             </div>
           </div>
         </div>
