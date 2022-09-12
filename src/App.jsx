@@ -10,14 +10,22 @@ import CartPage from "./CartPage";
 //import Error2 from "./Error2";
 
 function App() {
-  const [cart, setCart] = useState({});
-  function handleAddToCart(productId, count) {
-    const oldCount = cart[productId] || 0;
+  const savedDataString = localStorage.getItem("My-cart") || "{}";
+  const savedData = JSON.parse(savedDataString);
 
-    setCart({ ...cart, [productId]: oldCount + count });
+  const [cart, setCart] = useState({ savedData });
+
+  function handleAddToCart(productId, count) {
+    let oldCount = cart[productId] || 0;
+    const newCart = { ...cart, [productId]: oldCount + count };
+
+    setCart(newCart);
+
+    const cartString = JSON.stringify(newCart);
+    localStorage.setItem("My-cart", cartString);
   }
-  const totalCount = Object.keys(cart).reduce(function (previous, current) {
-    return previous + cart[current];
+  const totalCount = Object.keys(cart).reduce(function (output, current) {
+    return output + cart[current];
   }, 0);
   return (
     <>
