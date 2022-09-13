@@ -1,11 +1,11 @@
-import React from 'react';
-import TeamCard from './TeamCard';
+import React from "react";
+import TeamCard from "./TeamCard";
 
 function ProductList({ products }) {
   return (
     <>
-      <div className="justify-center flex flex-wrap mt-2 p-2 mt-8">
-        {products.map(function(item) {
+      <div className="justify-center flex flex-wrap p-2 mt-8">
+        {products.map(function (item) {
           return (
             <>
               <TeamCard key={item.id} {...item}></TeamCard>

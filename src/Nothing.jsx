@@ -1,7 +1,7 @@
 import React from "react";
 
 function Nothing() {
-  return(
+  return (
     <>
       <div className="flex grow mt-8 items-center justify-center">
         <div>

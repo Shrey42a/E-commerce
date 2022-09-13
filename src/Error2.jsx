@@ -10,8 +10,13 @@ function Error2() {
             <h3>the page you seek does not exist</h3>
           </div>
           <div className="footerq">
-            <a href="//leoh.me" title="home" target="_blank">leoh.me <span></span></a>
-            <p className="legal">copyright &copy; 2015&nbsp;-&nbsp;2016 Ltrademark&trade; all rights reserved</p>
+            <a href="//leoh.me" title="home" target="_blank">
+              leoh.me <span></span>
+            </a>
+            <p className="legal">
+              copyright &copy; 2015&nbsp;-&nbsp;2016 Ltrademark&trade; all
+              rights reserved
+            </p>
           </div>
         </div>
       </div>

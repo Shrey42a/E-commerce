@@ -1,13 +1,19 @@
 import React from "react";
 
-function Detail({details}) {
-  return(
+function Detail({ details }) {
+  return (
     <>
       <div>
-        {details.map(function(item) {
+        {details.map(function (item) {
           return (
             <>
-              <ProductDetail key={item.title2} pic={item.pic} title2={item.title2} mrp={item.mrp} mrp2={item.mrp2}></ProductDetail>
+              <ProductDetail
+                key={item.title2}
+                pic={item.pic}
+                title2={item.title2}
+                mrp={item.mrp}
+                mrp2={item.mrp2}
+              ></ProductDetail>
             </>
           );
         })}

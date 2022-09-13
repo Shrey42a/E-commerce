@@ -1,23 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .gradient {
-  background: linear-gradient(-45deg, #f0c1b2, #eeaac4, #c2b7f5, #87d9f7, #80ffe1);
+  background: linear-gradient(
+    -45deg,
+    #f0c1b2,
+    #eeaac4,
+    #c2b7f5,
+    #87d9f7,
+    #80ffe1
+  );
   animation: gradient 10s ease infinite;
 }
 @keyframes gradient {
-  0%{
+  0% {
     background-position: 0% 50%;
   }
-  50%{
+  50% {
     background-position: 10% 100%;
   }
-  100%{
+  100% {
     background-position: 0% 50%;
   }
 }
 
+.b23 {
+  background: #ff5151;
+  color: whitesmoke;
+}
+.b23:hover {
+  background: hsl(9, 93%, 56%);
+  color: white;
+}
 h1.text {
   font-size: 2em;
   color: #2b2b2b;
@@ -32,9 +46,9 @@ div.circle {
   width: 100px;
   height: 100px;
   outline: none;
-  -webkit-animation-name: greenPulse;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
+  animation-name: greenPulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 .circle:hover {
   box-shadow: 0 0 20px #91bd09;
@@ -43,15 +57,21 @@ div.circle {
   border: 1px solid #91bd09;
 }
 
-@-webkit-keyframes greenPulse {
-  from { -webkit-box-shadow: 2px 0px 10px #fb4b4b; }
-  50% { -webkit-box-shadow: 2px 0px 10px #e33b4b880; }
-  to { -webkit-box-shadow: 2px 0px 15px #db0004; }
+@keyframes greenPulse {
+  from {
+    -webkit-box-shadow: 2px 0px 10px #fb4b4b;
+  }
+  50% {
+    -webkit-box-shadow: 2px 0px 10px #e33bb880;
+  }
+  to {
+    -webkit-box-shadow: 2px 0px 15px #db0004;
+  }
 }
 
 .button {
   background: #fff;
-  display: inline-block; 
+  display: inline-block;
   color: #3d3d3d;
   text-decoration: none;
   padding: 10px 20px;
@@ -63,26 +83,25 @@ div.circle {
   animation: pulsate 1s ease-in-out;
 }
 @keyframes pulsate {
-  0%{
-    box-shadow: 0 0 25px #5ddcff,
-                0 0 50px #4e00c2;
+  0% {
+    box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
   }
 }
 
 .loader2 {
-  border: 16px solid #1E1E1c;
+  border: 16px solid #1e1e1c;
   border-top: 16px solid #ae9f48;
   border-radius: 50%;
   width: 100px;
   height: 100px;
   animation: spin 2s linear infinite;
-  box-shadiow: 0px 0px 15px #ae9f48;
+  box-shadow: 0px 0px 15px #ae9f48;
 }
 
 @keyframes spin {
-0% {
-  transform: rotate(0deg);
-}
+  0% {
+    transform: rotate(0deg);
+  }
   50% {
     background-color: #1e1e1c;
   }
@@ -93,7 +112,7 @@ div.circle {
 
 .con {
   display: grid;
-  place-item: center;
+  place-items: center;
   position: relative;
   height: 550px;
   width: 900px;
@@ -109,11 +128,22 @@ div.circle {
   left: 50px;
   right: 0;
   z-index: -1;
-  height:100%;
+  height: 100%;
   width: 100%;
   transform: scale(0.9) translateZ(0);
   background-size: 200%, 200%;
-  background: linear-gradient(to left, #8bb1ee, #a3f5bb, #ff66bf, #fffcb3, #ff770, #d9e7db, #8f8f8f, #3de1b8, #ff770);
+  background: linear-gradient(
+    to left,
+    #8bb1ee,
+    #a3f5bb,
+    #ff66bf,
+    #fffcb3,
+    #ff5770,
+    #d9e7db,
+    #8f8f8f,
+    #3de1b8,
+    #ff6770
+  );
   animation: animateGlow 1s linear infinite;
 }
 @keyframes animateGlow {
@@ -125,8 +155,7 @@ div.circle {
   }
 }
 .con span {
-  text-shadow: red -2px 0,
-               cyan 2px 0;
+  text-shadow: red -2px 0, cyan 2px 0;
 }
 
 .shadowBtn {
@@ -152,9 +181,6 @@ div.circle {
   transition: 1s ease;
 }
 
-
-
-
 .body4 {
   height: 100%;
 }
@@ -169,24 +195,23 @@ div.circle {
   opacity: 0.05;
   z-index: 230;
   user-select: none;
-  user-drag: none;
 }
 
 .error {
   text-align: center;
   filter: drop-shadow(8px 8px 4px #ff0000);
-  font-family: 'Gilda Display', serif;
+  font-family: "Gilda Display", serif;
   font-size: 115px;
   font-style: italic;
   text-align: center;
-  line-height: 60px;  
+  line-height: 60px;
   animation: noise 2s linear infinite;
   overflow: default;
 }
 
 .error:after {
-  content: '404';
-  font-family: 'Gilda Display', serif;
+  content: "404";
+  font-family: "Gilda Display", serif;
   font-size: 125px;
   font-style: italic;
   text-align: center;
@@ -199,12 +224,12 @@ div.circle {
   right: 0;
   opacity: 0;
   color: blue;
-  animation: noise-1 .2s linear infinite;
+  animation: noise-1 0.2s linear infinite;
 }
 
 .info {
   text-align: center;
-  font-family: 'Gilda Display', serif;
+  font-family: "Gilda Display", serif;
   filter: drop-shadow(8px 8px 4px #485044);
   font-size: 25px;
   font-style: italic;
@@ -214,12 +239,12 @@ div.circle {
 }
 
 .error:before {
-  content: '404';
-  font-family: 'Gilda Display', serif;
+  content: "404";
+  font-family: "Gilda Display", serif;
   font-size: 125px;
   font-style: italic;
   text-align: center;
-  
+
   line-height: 60px;
   margin: auto;
   position: absolute;
@@ -229,76 +254,135 @@ div.circle {
   right: 0;
   opacity: 0;
   color: red;
-  animation: noise-2 .2s linear infinite;
+  animation: noise-2 0.2s linear infinite;
 }
 
 @keyframes noise-1 {
-  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
-  10% {opacity: .1;}
-  50% {opacity: .5; left: -6px;}
-  80% {opacity: .3;}
-  100% {opacity: .6; left: 2px;}
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: -6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: 2px;
+  }
 }
 
 @keyframes noise-2 {
-  0%, 20%, 40%, 60%, 70%, 90% {opacity: 0;}
-  10% {opacity: .1;}
-  50% {opacity: .5; left: 6px;}
-  80% {opacity: .3;}
-  100% {opacity: .6; left: -2px;}
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: 6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: -2px;
+  }
 }
 
 @keyframes noise {
-  0%, 3%, 5%, 42%, 44%, 100% {opacity: 1; transform: scaleY(1);}  
-  4.3% {opacity: 1; transform: scaleY(1.7);}
-  43% {opacity: 1; transform: scaleX(1.5);}
+  0%,
+  3%,
+  5%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(1.7);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(1.5);
+  }
 }
 
 @keyframes noise-3 {
-  0%,3%,5%,42%,44%,100% {opacity: 1; transform: scaleY(1);}
-  4.3% {opacity: 1; transform: scaleY(4);}
-  43% {opacity: 1; transform: scaleX(10) rotate(60deg);}
+  0%,
+  3%,
+  5%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(4);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(10) rotate(60deg);
+  }
 }
 
-
-  .btn4 {
+.btn4 {
   background: transparent;
   filter: drop-shadow(8px 8px 4px #00eeff);
-  display: inline-block; 
+  display: inline-block;
   color: #ffffff;
   text-decoration: none;
   padding: 10px 10px;
   border-radius: 10px;
-    border: 2px solid #5c5c5c;
+  border: 2px solid #5c5c5c;
 }
 
 .btn4:hover {
   animation: pulsate 1s ease-in-out;
 }
 @keyframes pulsate {
-  0%{
-    box-shadow: 0 0 25px #5edcff,
-                0 0 50px #4e00c2;
+  0% {
+    box-shadow: 0 0 25px #5edcff, 0 0 50px #4e00c2;
   }
 }
-
 
 .search-input {
   outline: none;
   filter: drop-shadow(4px 4px 2px #4f4f4f);
   border: none;
   background: #d9d9d9;
-  width:0;
+  width: 0;
   padding: 0;
   color: #000000;
   float: left;
   font-size: 20px;
-  trnsition: .3s;
+  transition: 0.3s;
   border-radius: 10px;
   line-height: 40px;
 }
 .search-input::placeholder {
-  color: #8f8f8f
+  color: #8f8f8f;
 }
 .search-btn {
   color: #fff;
@@ -312,7 +396,7 @@ div.circle {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 .search-input:focus,
 .search-input:not(:placeholder-shown) {
@@ -333,4 +417,3 @@ div.circle {
 .span {
   filter: drop-shadow(3px 3px 1px #ff0000);
 }
-

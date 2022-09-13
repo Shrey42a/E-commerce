@@ -6,7 +6,7 @@ import Mainpage from "./Mainpage";
 import Header from "./Header";
 import Footer from "./Footer";
 import Error404 from "./Error404";
-import CartPage from "./CartPage";
+import CartPage2 from "./CartPage2";
 //import Error2 from "./Error2";
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
           <Routes>
             <Route index element={<Mainpage />}></Route>
             <Route path="/page" element={<Page />}></Route>
-            <Route path="/cart" element={<CartPage />}></Route>
+            <Route path="/cart" element={<CartPage2 />}></Route>
             <Route path="*" element={<Error404 />}></Route>
             <Route
               path="/productdetail/:id"
