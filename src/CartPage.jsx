@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartRow from "./CartRow";
+import { getProductListm } from "./Api";
 
 function CartPage() {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(function () {
+    const t = getProductListm();
+
+    t.then(function (ddata) {
+      setProductList(ddata.data.products);
+    });
+  }, []);
+
+  let data = productList.filter(function (item) {
+    return;
+  });
+
   return (
     <>
       <div class="">
@@ -15,7 +30,7 @@ function CartPage() {
           <div class="ml-16  grow flex">Total</div>
         </div>
         <div class="mb-1">
-          <CartRow />
+          <CartRow products={data} />
         </div>
 
         <div class="flex flex-col border-l lg:flex-row bg-slate-100 border-b border-gray-200 p-2 justify-between">

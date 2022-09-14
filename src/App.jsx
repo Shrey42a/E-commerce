@@ -13,10 +13,10 @@ function App() {
   const savedDataString = localStorage.getItem("My-cart") || "{}";
   const savedData = JSON.parse(savedDataString);
 
-  const [cart, setCart] = useState({ savedData });
+  const [cart, setCart] = useState(savedData);
 
   function handleAddToCart(productId, count) {
-    let oldCount = cart[productId] || 0;
+    const oldCount = cart[productId] || 0;
     const newCart = { ...cart, [productId]: oldCount + count };
 
     setCart(newCart);

@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartRow() {
+function CartRow({ thumbnail, title, price, id }) {
   return (
     <>
       <div className="bg-white">
@@ -8,7 +8,7 @@ function CartRow() {
           <div class="flex border-b border-gray-400 md:border-b-0 sm:border-b-0 lg:border-b-0 justify-center">
             <img
               class="sm:top-4 md:top-4 min-w-max max-h-44 lg:h-32 lg:w-40 sm:w-24 px-1 my-1 sm:h-24 md:h-24 md:w-24"
-              src="https://images.unsplash.com/photo-1662751663172-89b0c02f7505?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+              src={thumbnail}
             ></img>
           </div>
           <div class="flex grow col-span-2 font-bold border-b px-1 py-4 border-gray-400 md:border-b-0 sm:border-b-0 lg:border-b-0 justify-between">
@@ -16,14 +16,14 @@ function CartRow() {
               Product:
             </h1>
             <h1 class="flex text-red-500 lg:text-2xl truncate text-start">
-              Black printed cofee mug
+              {title}
             </h1>
           </div>
           <div class="flex font-bold border-b px-1 py-4 border-gray-400 md:border-b-0 sm:border-b-0 lg:border-b-0 justify-between">
             <h1 class="flex text-center sm:hidden lg:text-xl lg:hidden md:hidden">
               Price:
             </h1>
-            <h1 class="flex text-center lg:text-xl">$13</h1>
+            <h1 class="flex text-center lg:text-xl">{price}</h1>
           </div>
           <div class="flex font-bold border-b py-2 px-1 border-gray-400 md:border-b-0 sm:border-b-0 lg:border-b-0 justify-between">
             <h1 class="flex text-center sm:hidden lg:text-xl lg:hidden md:hidden">

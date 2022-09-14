@@ -22,7 +22,7 @@ function ProductDetail({ onAddToCart }) {
     setCount(+event.target.value);
   }
   function handleButtonClick() {
-    onAddToCart(id, count);
+    onAddToCart(+id, +count);
   }
 
   if (!product) {

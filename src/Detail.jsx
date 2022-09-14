@@ -8,7 +8,7 @@ function Detail({ details }) {
           return (
             <>
               <ProductDetail
-                key={item.title2}
+                key={item.title}
                 pic={item.pic}
                 title2={item.title2}
                 mrp={item.mrp}
