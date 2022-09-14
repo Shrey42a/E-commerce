@@ -4,14 +4,8 @@ import { Link } from "react-router-dom";
 function Header({ productCount }) {
   return (
     <>
-      <div className="bg-white border-b border-black">
-        <div className="flex justify-between">
-          <a className="cursor-default" href="https://www.amazon.in">
-            <img
-              src="https://pngimg.com/uploads/amazon/small/amazon_PNG21.png"
-              className="img h-16 md:h-12 cursor-pointer lg:h-16 lg:ml-20 ml-8"
-            ></img>
-          </a>
+      <div className="bg-white h-12 border-b border-black">
+        <div className="flex justify-end">
           <div className="flex flex-col">
             <Link to="/cart">
               <img

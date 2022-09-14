@@ -7,6 +7,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Error404 from "./Error404";
 import CartPage2 from "./CartPage2";
+import Navbar from "./Navbar";
 //import Error2 from "./Error2";
 
 function App() {

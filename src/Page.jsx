@@ -54,24 +54,19 @@ function Page() {
   return (
     <>
       <div className="bg-slate-200 justify-center flex">
-        <div className="bg-white shadow-lg cursor-not-allowed shadow-zinc-600 mb-4 max-w-min lg:max-w-7xl sm:max-w-md w-full md:max-w-3xl mt-2 p-6">
+        <div className="bg-white shadow-md shadow-zinc-600 mb-4 max-w-min lg:max-w-7xl sm:max-w-md w-full md:max-w-3xl mt-2 p-6">
           <h1 className="sm:text-left md:text-left lg:text-center font-bold text-3xl text-slate-400 -mb-8">
-            Amazon
+            @42Shopping
           </h1>
-          <div className="flex mt-8 justify-center sm:justify-center flex-col sm:flex-col md:flex-row lg:flex-row lg:justify-end">
-            <div className="search-box">
-              <input
-                spellCheck="true"
-                value={query}
-                onChange={handleChange}
-                className="search-input"
-                placeholder="Search"
-                type="text"
-              ></input>
-              <a className="search-btn">
-                <i className="fas fa-search"></i>
-              </a>
-            </div>
+          <div className="flex mt-8 sm:justify-center flex-col sm:flex-col md:flex-row lg:flex-row lg:justify-between">
+            <input
+              spellCheck="true"
+              value={query}
+              onChange={handleChange}
+              className="p-2 bg-slate-100 outline-0 rounded-lg shadow-md shadow-zinc-400"
+              placeholder="Search"
+              type="text"
+            ></input>
 
             <select
               value={sort}

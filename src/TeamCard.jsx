@@ -27,19 +27,17 @@ function TeamCard({
           <h3 className="text-slate-400 text-sm ml-2">{category}</h3>
           <h1 className="font-bold ml-2 truncate text-2xl">{title}</h1>
           <div className="flex ml-2">
-            <h1 className="font-semibold text-lg">Rating {rating}</h1>
+            <h1 className="text-lg">Rating {rating}</h1>
           </div>
           <div className="flex justify-between">
             <div className="">
-              <h2 className="font-semibold text-lg decoration-2 ml-2">
+              <h2 className="text-lg decoration-2 ml-2">
                 Discount {discountPercentage}%
               </h2>
               <h3 className="text-black text-lg font-semibold ml-2">
                 $ {price}
               </h3>
-              <h1 className="text-black font-semibold text-sm ml-2">
-                Stock {stock}
-              </h1>
+              <h1 className="text-black text-sm ml-2">Stock {stock}</h1>
               <div className="flex flex-col">
                 <h1 className="text-black truncate text-lg overflow-hidden font-semibold ml-2">
                   Brand "{brand}"
