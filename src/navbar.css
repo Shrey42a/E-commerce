@@ -1,3 +1,137 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+nav {
+  background: linear-gradient(117deg, #0f3443, #e8f5c8, #dafcfc);
+  padding: 0 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+.logo2 {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+.item2 {
+  padding: 10px;
+}
+.item2.button2 {
+  padding: 9px 5px;
+}
+.item2:not(.button2) a:hover,
+.item2 a:hover::after {
+  color: rgb(180, 180, 180);
+  filter: drop-shadow(8px, 8px, 4px rgb(250, 0, 0));
+  transform: scale(0.9);
+  --effect: 1s linear infinite;
+}
+
+.menu2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu2 li a {
+  display: block;
+  padding: 15px 5px;
+}
+.toggle2 {
+  order: 1;
+  font-size: 20px;
+}
+.item2.button2 {
+  order: 2;
+}
+.item2 {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.active .item2 {
+  display: block;
+}
+.button2.secondary2 {
+  border-bottom: 1px #444 solid;
+}
+
+@media all and (min-width: 700px) {
+  .menu2 {
+    justify-content: center;
+  }
+  .logo2 {
+    flex: 1;
+  }
+  .item2.button2 {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  .toggle2 {
+    flex: 1;
+    text-align: right;
+    order: 2;
+  }
+  /* Button up from tablet screen */
+  .menu2 li.button2 a {
+    padding: 10px 15px;
+    margin: 5px 0;
+  }
+  .button2 a {
+    background: transparent;
+    color: #292c41;
+    padding: 4px 10px;
+    opacity: 50%;
+    fill-opacity: 100%;
+    border-radius: 10%;
+    box-shadow: 0 0 5px #b1b1b1, 0 0 10px #a7a7a7;
+    border: 1px #0080ff solid;
+  }
+  .button2.secondary2 {
+    border: 0;
+  }
+  .button2.secondary2 a {
+    background: transparent;
+    color: #292c41;
+    padding: 4px 10px;
+    opacity: 50%;
+    fill-opacity: 100%;
+    border-radius: 10%;
+    box-shadow: 0 0 5px #a7a7a7, 0 0 10px #a7a7a7;
+    border: 1px #0080ff solid;
+  }
+  .button2 a:hover {
+    text-decoration: none;
+    box-shadow: 0 0 5px #111111, 0 0 10px #2e2e2e;
+  }
+  .button2:not(.secondary2) a:hover {
+    box-shadow: 0 0 5px #111111, 0 0 10px #2e2e2e;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .menu2 {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+  .logo2 {
+    order: 0;
+  }
+  .toggle2 {
+    display: none;
+  }
+  .item2 {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .button2 {
+    order: 2;
+  }
+}

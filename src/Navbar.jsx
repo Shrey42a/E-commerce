@@ -1,6 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Navbar() {
-  return <></>;
+function Navbar({ productCount }) {
+  return (
+    <>
+      <nav className="flex items-center justify-between w-full border-b border-slate-600">
+        <div>
+          <ul class="menu2">
+            <li class="logo2">
+              <img
+                class="shadow-xl hover:outline hover:outline-lime-100 shadow-zinc-800 h-12 mt-2 rounded-full w-12"
+                src="https://img.freepik.com/free-psd/luxury-beauty-logo-mockup_4513-551.jpg?size=626&ext=jpg&ga=GA1.2.1229558507.1646104130"
+              ></img>
+            </li>
+            <li class="item2">
+              <Link to="/page">Home</Link>
+            </li>
+            <li class="item2">
+              <a href="#">About</a>
+            </li>
+            <li class="item2">
+              <a href="#">Contact</a>
+            </li>
+
+            <li class="toggle2">
+              <a href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="flex items-center">
+          <li class="item2 button2">
+            <a href="#">Log In</a>
+          </li>
+          <li class="item2 button2 secondary2">
+            <a href="#">Sign Up</a>
+          </li>
+        </div>
+        <Link to="/cart">
+          <img
+            className="h-12 my-auto mr-8 cursor-pointer lg:h-12"
+            src="https://cdn-icons-png.flaticon.com/512/70/70021.png"
+          ></img>
+        </Link>
+        <span className="w-2 ml-4 -mt-6 font-bold text-red-700 span">
+          {productCount}
+        </span>
+      </nav>
+    </>
+  );
 }
 export default Navbar;

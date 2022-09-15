@@ -5,6 +5,7 @@ module.exports = {
       backgroundImage: {
         bulb: "url('src/bulb.jpg')",
         error1: "url('src/error1.png')",
+        pic: "url('src/1.jpg')",
       },
     },
   },
