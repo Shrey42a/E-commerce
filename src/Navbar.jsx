@@ -31,10 +31,10 @@ function Navbar({ productCount }) {
           </ul>
         </div>
         <div className="flex items-center">
-          <li class="item2 button2">
+          <li class="item2 bg9 button2">
             <a href="#">Log In</a>
           </li>
-          <li class="item2 button2 secondary2">
+          <li class="item2 bg9 button2 secondary2">
             <a href="#">Sign Up</a>
           </li>
         </div>

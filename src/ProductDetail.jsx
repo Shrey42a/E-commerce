@@ -38,8 +38,8 @@ function ProductDetail({ onAddToCart }) {
   return (
     <>
       <div className="flex flex-col justify-center bg-slate-200 lg:h-screen">
-        <div className="flex justify-center p-4 bg-slate-200">
-          <div className="flex flex-col p-2 bg-white shadow-md shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
+        <div className="flex justify-center p-4 bg-pic3">
+          <div className="flex flex-col p-2 shadow-md bg9 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
               <img
                 className="w-full shadow-md h-80 lg:h-96 lg:w-full shadow-zinc-700 md:h-full sm:h-full"
@@ -50,28 +50,28 @@ function ProductDetail({ onAddToCart }) {
               </div>
             </div>
             <div className="w-3/4 mt-4 ml-4">
-              <h3 className="text-slate-400 text-md">{product.category}</h3>
-              <h1 className="text-3xl font-semibold lg:text-4xl md:text-3xl sm:text-2xl">
+              <h3 className="text-white text-md">{product.category}</h3>
+              <h1 className="text-3xl font-semibold text-red-500 lg:text-4xl md:text-3xl sm:text-2xl">
                 {product.title}
               </h1>
-              <p className="text-lg lg:text-2xl sm:text-lg md:text-xl md:overflow-hidden">
+              <p className="text-lg text-white lg:text-2xl sm:text-lg md:text-xl md:overflow-hidden">
                 {product.description}
               </p>
-              <h1 className="mt-2 text-xl font-semibold">
+              <h1 className="mt-2 text-xl font-semibold text-white">
                 Rating {product.rating}
               </h1>
               <div>
-                <h2 className="mt-2 text-xl font-bold lg:text-xl text-slate-500 md:text-lg sm:text-md">
+                <h2 className="mt-2 text-xl font-bold lg:text-xl text-slate-200 md:text-lg sm:text-md">
                   Discount {product.discountPercentage}%
                 </h2>
-                <h1 className="mt-2 text-xl font-bold lg:text-4xl text-slate-900 md:text-4xl sm:text-3xl">
+                <h1 className="mt-2 text-xl font-bold lg:text-4xl text-slate-100 md:text-4xl sm:text-3xl">
                   $ {product.price}
                 </h1>
               </div>
-              <h1 className="mt-2 font-semibold text-black">
+              <h1 className="mt-2 font-semibold text-white">
                 Stock {product.stock}
               </h1>
-              <h1 className="font-semibold text-black truncate">
+              <h1 className="font-semibold text-white truncate">
                 Brand "{product.brand}"
               </h1>
               <div className="flex mt-2 space-x-2">
