@@ -15,7 +15,7 @@ function TeamCard({
   return (
     <Link title="Details" to={"/productdetail/" + id}>
       <div className="overflow-hidden z-index-0">
-        <div className="m-2 overflow-hidden bg-white rounded-md shadow-md outline outline-transparent shrink shadow-zinc-800 w-80">
+        <div className="m-2 overflow-hidden rounded-md shadow-md bg9 outline outline-transparent shrink shadow-zinc-800 w-80">
           <div className="flex max-w-xs">
             <div className="w-full aspect-square">
               <img className="object-cover w-full h-full" src={thumbnail}></img>
@@ -29,19 +29,19 @@ function TeamCard({
             {title}
           </h1>
           <div className="flex ml-2">
-            <h1 className="text-lg text-black">Rating {rating}</h1>
+            <h1 className="text-lg text-white">Rating {rating}</h1>
           </div>
           <div className="flex justify-between">
             <div className="">
-              <h2 className="ml-2 text-lg text-black decoration-2">
+              <h2 className="ml-2 text-lg text-white decoration-2">
                 Discount {discountPercentage}%
               </h2>
-              <h3 className="ml-2 text-lg font-semibold text-black">
+              <h3 className="ml-2 text-lg font-semibold text-white">
                 $ {price}
               </h3>
-              <h1 className="ml-2 text-sm text-black">Stock {stock}</h1>
+              <h1 className="ml-2 text-sm text-white">Stock {stock}</h1>
               <div className="flex flex-col">
-                <h1 className="ml-2 overflow-hidden text-lg font-semibold text-black truncate">
+                <h1 className="ml-2 overflow-hidden text-lg font-semibold text-white truncate">
                   Brand "{brand}"
                 </h1>
               </div>
