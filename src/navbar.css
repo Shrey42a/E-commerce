@@ -26,7 +26,7 @@ a {
   color: rgb(180, 180, 180);
   filter: drop-shadow(8px, 8px, 4px rgb(250, 0, 0));
   transform: scale(0.9);
-  --effect: hover 1s linear infinite;
+  --effect: 1s linear infinite;
 }
 
 .menu2 {
