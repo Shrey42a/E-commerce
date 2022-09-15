@@ -53,17 +53,17 @@ function Page() {
 
   return (
     <>
-      <div className="bg-slate-200 justify-center flex">
-        <div className="bg-white shadow-md shadow-zinc-600 mb-4 max-w-min lg:max-w-7xl sm:max-w-md w-full md:max-w-3xl mt-2 p-6">
-          <h1 className="sm:text-left md:text-left lg:text-center font-bold text-3xl text-slate-400 -mb-8">
+      <div className="flex justify-center p-2 bg-slate-100">
+        <div className="w-full p-6 mt-6 mb-4 bg-white shadow-md shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
+          <h1 className="-mb-8 text-3xl font-bold sm:text-left md:text-left lg:text-center text-slate-400">
             @42Shopping
           </h1>
-          <div className="flex mt-8 sm:justify-center flex-col sm:flex-col md:flex-row lg:flex-row lg:justify-between">
+          <div className="flex flex-col mt-8 sm:justify-center sm:flex-col md:flex-row lg:flex-row lg:justify-between">
             <input
               spellCheck="true"
               value={query}
               onChange={handleChange}
-              className="p-2 bg-slate-100 outline-0 rounded-lg shadow-md shadow-zinc-400"
+              className="p-2 rounded-lg shadow-md bg-slate-100 outline-0 shadow-zinc-400"
               placeholder="Search"
               type="text"
             ></input>
@@ -71,9 +71,9 @@ function Page() {
             <select
               value={sort}
               onChange={handleSortChange}
-              className="w-48 mx-auto lg:w-48 shadow-zinc-400 shadow-md outline-0 border rounded-md pr-2 pl-2 m-2"
+              className="w-48 pl-2 pr-2 m-2 mx-auto border rounded-md shadow-md lg:w-48 shadow-zinc-400 outline-0"
             >
-              <option value="default" className="text-sm p-2 font-semibold">
+              <option value="default" className="p-2 text-sm font-semibold">
                 Default sorting
               </option>
               <option value="name" className="text-sm font-semibold">
@@ -100,13 +100,13 @@ function Page() {
           {data.length > 0 && <ProductList products={data} />}
           {data.length == 0 && <Nothing></Nothing>}
 
-          <div className="text-xl mt-4 flex items-center space-x-2">
+          <div className="flex items-center mt-4 space-x-2 text-xl">
             <button className="font-bold button">1</button>
             <button className="font-bold button">2</button>
             <button className="font-bold button">3</button>
           </div>
 
-          <div className="flex mb-2 mt-4 items-center justify-center p-2">
+          <div className="flex items-center justify-center p-2 mt-4 mb-2">
             <Social />
           </div>
         </div>

@@ -3,7 +3,6 @@ import Page from "./Page";
 import ProductDetail from "./ProductDetail";
 import { Routes, Route } from "react-router-dom";
 import Mainpage from "./Mainpage";
-import Header from "./Header";
 import Footer from "./Footer";
 import Error404 from "./Error404";
 import CartPage2 from "./CartPage2";
@@ -31,7 +30,7 @@ function App() {
   return (
     <>
       <div className="h-screen">
-        <Header productCount={totalCount} />
+        <Navbar />
         <div className="grow">
           <Routes>
             <Route index element={<Mainpage />}></Route>
