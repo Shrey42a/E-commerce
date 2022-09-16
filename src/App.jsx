@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <div className="h-screen">
-        <Navbar />
+        <Navbar productCount={totalCount} />
         <div className="grow">
           <Routes>
             <Route index element={<Mainpage />}></Route>
