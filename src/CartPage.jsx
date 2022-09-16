@@ -4,20 +4,6 @@ import CartRow from "./CartRow";
 import { getProductListm } from "./Api";
 
 function CartPage() {
-  const [productList, setProductList] = useState([]);
-
-  useEffect(function () {
-    const t = getProductListm();
-
-    t.then(function (ddata) {
-      setProductList(ddata.data.products);
-    });
-  }, []);
-
-  let data = productList.filter(function (item) {
-    return;
-  });
-
   return (
     <>
       <div class="">
@@ -30,7 +16,7 @@ function CartPage() {
           <div class="ml-16  grow flex">Total</div>
         </div>
         <div class="mb-1">
-          <CartRow products={data} />
+          <CartRow />
         </div>
 
         <div class="flex flex-col border-l lg:flex-row bg-slate-100 border-b border-gray-200 p-2 justify-between">
@@ -68,11 +54,9 @@ function CartPage() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <Link to="/page">
-            <button className="rounded-lg bg-teal-400 text-xl p-2 shadow-xl shadow-zinc-600 font-semibold">
-              Home
-            </button>
+            <button className="btnn">Home</button>
           </Link>
         </div>
       </div>

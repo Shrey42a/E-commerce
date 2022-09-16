@@ -54,16 +54,16 @@ function Page() {
   return (
     <>
       <div className="flex justify-center p-2 bg-slate-100">
-        <div className="w-full p-6 mt-6 mb-4 shadow-md bg9 bg-pic4 shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
-          <h1 className="-mb-8 text-3xl font-bold sm:text-left md:text-left lg:text-center text-slate-400">
+        <div className="w-full p-6 mt-6 mb-4 bg-cover shadow-md gradient shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
+          <h1 className="-mb-8 text-3xl font-bold text-center sm:text-left md:text-left lg:text-center text-slate-400">
             @42Shopping
           </h1>
-          <div className="flex flex-col mt-8 sm:justify-center sm:flex-col md:flex-row lg:flex-row lg:justify-between">
+          <div className="flex flex-col items-center justify-center mt-8 sm:justify-center sm:flex-col md:flex-row lg:flex-row lg:justify-between">
             <input
               spellCheck="true"
               value={query}
               onChange={handleChange}
-              className="p-2 rounded-lg shadow-md bg-slate-100 outline-0 shadow-zinc-400"
+              className="p-2 rounded-lg shadow-md w-1/2 bg-slate-100 outline-0 shadow-zinc-400"
               placeholder="Search"
               type="text"
             ></input>

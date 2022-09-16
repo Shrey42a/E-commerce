@@ -37,8 +37,8 @@ function ProductDetail({ onAddToCart }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-slate-200 lg:h-screen">
-        <div className="flex justify-center p-4 bg-pic3">
+      <div className="flex flex-col justify-center bg-pic17 lg:h-screen">
+        <div className="flex justify-center p-4">
           <div className="flex flex-col p-2 shadow-md bg9 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
               <img
@@ -81,17 +81,12 @@ function ProductDetail({ onAddToCart }) {
                   type="number"
                   className="w-20 px-2 text-2xl text-center rounded-lg shadow-md shadow-zinc-600 bg-slate-200"
                 ></input>
-                <button
-                  onClick={handleButtonClick}
-                  className="p-2 px-4 font-semibold text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 shadow-zinc-700 outline-0"
-                >
+                <button onClick={handleButtonClick} className="btnn">
                   Add to cart
                 </button>
               </div>
               <div className="flex items-center mt-2 space-x-4">
-                <button className="p-2 px-4 font-semibold text-white rounded-lg shadow-md bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
-                  Buy Now
-                </button>
+                <button className="btnn">Buy Now</button>
                 <Link title="Products" to="/page">
                   <button className="p-2 px-3 py-1 text-lg font-semibold text-white rounded-lg shadow-md bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
                     Back
@@ -104,7 +99,7 @@ function ProductDetail({ onAddToCart }) {
         <div className="flex items-center justify-around p-2 mt-2 space-x-2">
           {id > 1 && (
             <Link title="Prev" to={"/productdetail/" + (id - 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md bg9 hover:bg10 shadow-zinc-700 outline-0">
                 Prev
               </button>
             </Link>
@@ -114,7 +109,7 @@ function ProductDetail({ onAddToCart }) {
 
           {id < 100 && (
             <Link title="Next" to={"/productdetail/" + (id + 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md bg-lime-500 text-md hover:bg-lime-600 shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md hover:bg10 bg9 text-md shadow-zinc-700 outline-0">
                 Next
               </button>
             </Link>
