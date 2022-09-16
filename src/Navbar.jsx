@@ -6,35 +6,35 @@ function Navbar({ productCount }) {
     <>
       <nav className="flex items-center justify-between w-full border-b border-slate-600">
         <div>
-          <ul class="menu2">
-            <li class="logo2">
+          <ul className="menu2">
+            <li className="logo2">
               <img
-                class="shadow-xl hover:outline hover:outline-lime-100 shadow-zinc-800 h-12 mt-2 rounded-full w-12"
+                className="shadow-xl hover:outline hover:outline-lime-100 shadow-zinc-800 h-12 mt-2 rounded-full w-12"
                 src="https://img.freepik.com/free-psd/luxury-beauty-logo-mockup_4513-551.jpg?size=626&ext=jpg&ga=GA1.2.1229558507.1646104130"
               ></img>
             </li>
-            <li class="item2">
+            <li className="item2">
               <Link to="/page">Home</Link>
             </li>
-            <li class="item2">
+            <li className="item2">
               <a href="#">About</a>
             </li>
-            <li class="item2">
+            <li className="item2">
               <a href="#">Contact</a>
             </li>
 
-            <li class="toggle2">
+            <li className="toggle2">
               <a href="#">
-                <i class="fas fa-bars"></i>
+                <i className="fas fa-bars"></i>
               </a>
             </li>
           </ul>
         </div>
         <div className="flex items-center">
-          <li class="item2 bg9 button2">
+          <li className="item2 bg9 button2">
             <a href="#">Log In</a>
           </li>
-          <li class="item2 bg9 button2 secondary2">
+          <li className="item2 bg9 button2 secondary2">
             <a href="#">Sign Up</a>
           </li>
         </div>

@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 .gradient {
-  opacity: 100%;
-  fill-opacity: 20%;
-  background: linear-gradient(
-    117deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 0.7231267507002801) 9%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  animation: gradient 1s ease infinite;
+  background-color: #0a0d31;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(124.81, 35%, 19%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(41.9, 93%, 17%) 0, transparent 55%);
 }
 
 @keyframes gradient {
