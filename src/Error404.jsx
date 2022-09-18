@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Error404() {
   return (
     <>
-      <div className="bg-error1 bg-cover bg-no-repeat bg-left h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center h-screen bg-cover bg-pic21">
         <Link title="Homepage" to="/page">
           <button className="btn4">Go Home</button>
         </Link>

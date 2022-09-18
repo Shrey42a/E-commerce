@@ -23,6 +23,7 @@ function ProductDetail({ onAddToCart }) {
   }
   function handleButtonClick() {
     onAddToCart(+id, +count);
+    console.log("product id", id, "count", count);
   }
 
   if (!product) {
@@ -37,7 +38,7 @@ function ProductDetail({ onAddToCart }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-pic17 lg:h-screen">
+      <div className="flex flex-col justify-center bg-no-repeat bg-cover bg-pic17 lg:h-screen">
         <div className="flex justify-center p-4">
           <div className="flex flex-col p-2 shadow-md bg9 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
