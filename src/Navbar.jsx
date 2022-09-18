@@ -38,15 +38,17 @@ function Navbar({ productCount }) {
             <a href="#">Sign Up</a>
           </li>
         </div>
-        <Link to="/cart">
-          <img
-            className="h-12 my-auto mr-8 cursor-pointer lg:h-12"
-            src="https://cdn-icons-png.flaticon.com/512/70/70021.png"
-          ></img>
-        </Link>
-        <span className="w-2 ml-4 -mt-6 font-bold text-red-700 span">
-          {productCount}
-        </span>
+        <div className="flex">
+          <Link to="/cart">
+            <img
+              className="h-12 my-auto mr-8 cursor-pointer lg:h-12"
+              src="https://cdn-icons-png.flaticon.com/512/70/70021.png"
+            ></img>
+          </Link>
+          <span className="w-2 ml-4 -mt-6 font-bold text-red-700 span">
+            {productCount}
+          </span>
+        </div>
       </nav>
     </>
   );
