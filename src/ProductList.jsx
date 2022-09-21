@@ -4,7 +4,7 @@ import TeamCard from "./TeamCard";
 function ProductList({ products }) {
   return (
     <>
-      <div className="justify-center flex flex-wrap p-2 mt-8">
+      <div className="flex flex-wrap justify-center p-2 mt-8 overflow-hidden">
         {products.map(function (item) {
           return (
             <>

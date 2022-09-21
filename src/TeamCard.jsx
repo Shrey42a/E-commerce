@@ -14,7 +14,7 @@ function TeamCard({
 }) {
   return (
     <Link title="Details" to={"/productdetail/" + id}>
-      <div className="m-2 overflow-hidden rounded-md shadow-md bg10 outline outline-transparent shrink shadow-zinc-800 w-60 lg:w-80">
+      <div className="m-2 rounded-md shadow-md bg10 outline outline-transparent shrink shadow-zinc-800 w-60 lg:w-80">
         <div className="flex max-w-xs">
           <div className="w-full aspect-square">
             <img className="object-cover w-full h-full" src={thumbnail}></img>

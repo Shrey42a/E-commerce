@@ -9,7 +9,7 @@ function Navbar({ productCount }) {
           <ul className="menu2">
             <li className="logo2">
               <img
-                className="shadow-xl hover:outline hover:outline-lime-100 shadow-zinc-800 h-12 mt-2 rounded-full w-12"
+                className="w-12 h-12 mt-2 rounded-full shadow-xl hover:outline hover:outline-lime-100 shadow-zinc-800"
                 src="https://img.freepik.com/free-psd/luxury-beauty-logo-mockup_4513-551.jpg?size=626&ext=jpg&ga=GA1.2.1229558507.1646104130"
               ></img>
             </li>
@@ -32,10 +32,7 @@ function Navbar({ productCount }) {
         </div>
         <div className="flex items-center">
           <li className="item2 bg9 button2">
-            <a href="#">Log In</a>
-          </li>
-          <li className="item2 bg9 button2 secondary2">
-            <a href="#">Sign Up</a>
+            <Link to="/login">Sign Up</Link>
           </li>
         </div>
         <div className="flex">
