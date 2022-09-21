@@ -30,6 +30,9 @@ function Navbar({ productCount }) {
             </li>
           </ul>
         </div>
+        <Link to="/login">
+          <button className="btnn text-lg lg:hidden">Log in</button>
+        </Link>
         <div className="flex items-center">
           <li className="item2 bg9 button2">
             <Link to="/login">Sign Up</Link>
