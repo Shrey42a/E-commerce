@@ -5,7 +5,7 @@ import Social from "./Social";
 function Mainpage() {
   return (
     <>
-      <div className="flex flex-col items-center p-2 bg-cover bg-pic10 sm:h-max md:h-max lg:h-screen h-max">
+      <div className="flex flex-col items-center p-2 bg-center bg-cover bg-pic26 sm:h-max md:h-max lg:h-screen h-max">
         <div>
           <Card />
         </div>
