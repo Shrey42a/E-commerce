@@ -29,7 +29,7 @@ function Forget() {
   });
   return (
     <>
-      <div className="flex items-center justify-center py-28 h-max bg-pic32">
+      <div className="flex items-center justify-center py-28 h-max bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
         <form onSubmit={handleSubmit} class="w-full lg:w-1/2">
           <div class="bg10 py-8 px-2">
             <div class="rounded-md mx-4 p-4">
