@@ -27,7 +27,6 @@ function Login() {
     handleBlur,
     touched,
     isValid,
-    dirty,
   } = useFormik({
     initialValues: {
       email: "",
@@ -96,7 +95,7 @@ function Login() {
               </div>
               <div className="flex space-x-2">
                 <button
-                  disabled={!dirty && !isValid}
+                  disabled={!isValid}
                   type="submit"
                   className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm disabled:cursor-not-allowed disabled:bg-red-400"
                 >

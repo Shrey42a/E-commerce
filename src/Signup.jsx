@@ -18,6 +18,7 @@ function Signup() {
   const schema = Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().email().required(),
+    confirmPassword: Yup.string().required().min(8).max(18).uppercase(),
     password: Yup.string()
       .required()
       .min(8)
@@ -35,12 +36,12 @@ function Signup() {
     handleBlur,
     touched,
     isValid,
-    dirty,
   } = useFormik({
     initialValues: {
       email: "",
       password: "",
       name: "",
+      confirmPassword: "",
     },
     onSubmit: calloginApi,
     validationSchema: schema,
@@ -122,24 +123,24 @@ function Signup() {
               </div>
 
               <div className="flex flex-col mt-4">
-                <label htmlFor="pass2" className="">
+                <label htmlFor="confirmPassword" className="">
                   Confirm Password
                 </label>
                 <input
-                  id="pass2"
-                  name="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
                   type="password"
                   required
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.password}
+                  value={values.confirmPassword}
                   placeholder="Password"
                   autoComplete="password"
                   className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
-                {touched.password && errors.password && (
+                {touched.confirmPassword && errors.confirmPassword && (
                   <div className="font-semibold text-red-800">
-                    {errors.password}
+                    {errors.confirmPassword}
                   </div>
                 )}
               </div>
@@ -150,7 +151,7 @@ function Signup() {
               </div>
               <div className="flex space-x-2">
                 <button
-                  disabled={!dirty && !isValid}
+                  disabled={!isValid}
                   type="submit"
                   className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm disabled:bg-red-400 disabled:cursor-not-allowed"
                 >

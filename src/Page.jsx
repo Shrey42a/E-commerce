@@ -54,7 +54,7 @@ function Page() {
   return (
     <>
       <div className="flex justify-center p-2 bg-slate-100">
-        <div className="w-full p-6 mt-6 mb-4 bg-cover shadow-md z-index-0 bg-pic32 shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
+        <div className="w-full p-6 mt-6 mb-4 bg-cover shadow-md bg-pic32 shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
           <h1 className="-mb-8 text-3xl font-bold text-center sm:text-left md:text-left lg:text-center text-slate-400">
             @42Shopping
           </h1>
