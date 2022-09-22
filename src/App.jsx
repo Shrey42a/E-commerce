@@ -10,6 +10,7 @@ import Navbar from "./Navbar";
 import Login from "./Login";
 import Signup from "./Signup";
 import Forget from "./Forget";
+import Header from "./Header";
 
 function App() {
   const savedDataString = localStorage.getItem("My-cart") || "{}";
@@ -34,6 +35,7 @@ function App() {
     <>
       <div>
         <Navbar productCount={totalCount} />
+        <Header />
         <div className="grow">
           <Routes>
             <Route index element={<Mainpage />}></Route>
