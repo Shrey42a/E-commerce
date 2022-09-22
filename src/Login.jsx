@@ -38,7 +38,7 @@ function Login() {
 
   return (
     <>
-      <div className="flex items-center justify-center py-20 h-4/5 bg-pic32">
+      <div className="flex items-center justify-center py-20 h-4/5 bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
         <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-8 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">

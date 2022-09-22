@@ -38,9 +38,9 @@ function ProductDetail({ onAddToCart }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-pic32 lg:h-screen">
+      <div className="flex flex-col justify-center bg-cover bg-center bg-no-repeat bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)] lg:h-screen">
         <div className="flex justify-center p-4">
-          <div className="flex flex-col p-2 shadow-md bg9 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
+          <div className="flex flex-col p-2 shadow-md glass2 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
               <img
                 className="w-full shadow-md h-80 lg:h-96 lg:w-full shadow-zinc-700 md:h-full sm:h-full"
