@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import CartRow from "./CartRow";
 import { getProductListm } from "./Api";
@@ -63,4 +63,5 @@ function CartPage() {
     </>
   );
 }
-export default CartPage;
+const BetterCartPage = memo(CartPage);
+export default BetterCartPage;

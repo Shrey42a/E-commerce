@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -11,13 +11,16 @@ function Signup() {
       "password",
       values.password,
       "name",
-      values.name
+      values.name,
+      "phone",
+      values.phone
     );
   }
 
   const schema = Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().email().required(),
+    phone: Yup.string().required(),
     confirmPassword: Yup.string().required().min(8).max(18).uppercase(),
     password: Yup.string()
       .required()
@@ -40,6 +43,7 @@ function Signup() {
     initialValues: {
       email: "",
       password: "",
+      phone: "",
       name: "",
       confirmPassword: "",
     },
@@ -56,9 +60,12 @@ function Signup() {
             </h1>
             <div className="p-4 mx-4 rounded-md">
               <div className="flex flex-col">
-                <label htmlFor="name" className="">
-                  Name
-                </label>
+                <div className="flex space-x-1">
+                  <label htmlFor="name" className="">
+                    Name
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="name"
                   name="name"
@@ -72,15 +79,45 @@ function Signup() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
                 {touched.name && errors.name && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.name}
                   </div>
                 )}
               </div>
+
               <div className="flex flex-col">
-                <label htmlFor="email" className="">
-                  Email
-                </label>
+                <div className="flex space-x-1">
+                  <label htmlFor="phone" className="">
+                    Phone number
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.phone}
+                  placeholder="Enter your phone number"
+                  autoComplete="phone"
+                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                />
+                {touched.phone && errors.phone && (
+                  <div className="font-semibold text-red-500">
+                    {errors.phone}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-col">
+                <div className="flex space-x-1">
+                  <label htmlFor="email" className="">
+                    Email
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="email-address"
                   onBlur={handleBlur}
@@ -94,15 +131,18 @@ function Signup() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
                 {touched.email && errors.email && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.email}
                   </div>
                 )}
               </div>
-              <div className="flex flex-col mt-4">
-                <label htmlFor="pass" className="">
-                  Create Password
-                </label>
+              <div className="flex flex-col">
+                <div className="flex space-x-1">
+                  <label htmlFor="pass" className="">
+                    Create password
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="pass"
                   name="password"
@@ -116,16 +156,19 @@ function Signup() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
                 {touched.password && errors.password && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.password}
                   </div>
                 )}
               </div>
 
-              <div className="flex flex-col mt-4">
-                <label htmlFor="confirmPassword" className="">
-                  Confirm Password
-                </label>
+              <div className="flex flex-col">
+                <div className="flex space-x-1">
+                  <label htmlFor="ConfirmPassword" className="">
+                    Confirm password
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="confirmPassword"
                   name="confirmPassword"
@@ -139,7 +182,7 @@ function Signup() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
                 {touched.confirmPassword && errors.confirmPassword && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.confirmPassword}
                   </div>
                 )}
@@ -182,4 +225,5 @@ function Signup() {
     </>
   );
 }
-export default Signup;
+const BetterSignup = memo(Signup);
+export default BetterSignup;

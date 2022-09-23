@@ -5,23 +5,23 @@ function Navbar({ productCount }) {
   return (
     <>
       <div>
-        <nav class="navbar">
-          <div class="flex flex-col-rev">
-            <div class="m-4">
+        <nav className="navbar">
+          <div className="flex flex-col-rev">
+            <div className="m-4">
               <img
                 src="https://images.unsplash.com/photo-1472898965229-f9b06b9c9bbe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdvcmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                class="shadow-xl shadow-zinc-700 h-10 w-10 rounded-full"
+                className="w-10 h-10 rounded-full shadow-xl shadow-zinc-700"
               ></img>
             </div>
-            <div class="navbar-container container">
+            <div className="container navbar-container">
               <input type="checkbox" name="" id="" />
-              <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-                <span class="line line4"></span>
+              <div className="hamburger-lines">
+                <span className="line line1"></span>
+                <span className="line line2"></span>
+                <span className="line line3"></span>
+                <span className="line line4"></span>
               </div>
-              <ul class="menu-items">
+              <ul className="menu-items">
                 <li>
                   <Link to="/page">
                     <h1>Home</h1>

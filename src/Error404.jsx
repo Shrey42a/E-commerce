@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 function Error404() {
@@ -22,4 +22,5 @@ function Error404() {
     </>
   );
 }
-export default Error404;
+const BetterError404 = memo(Error404);
+export default BetterError404;

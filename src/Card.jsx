@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 function Card() {
@@ -24,4 +24,6 @@ function Card() {
   );
 }
 
-export default Card;
+const BetterCard = memo(Card);
+
+export default BetterCard;

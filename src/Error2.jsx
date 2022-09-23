@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function Error2() {
   return (
@@ -23,5 +23,5 @@ function Error2() {
     </>
   );
 }
-
-export default Error2;
+const BetterError2 = memo(Error2);
+export default BetterError2;

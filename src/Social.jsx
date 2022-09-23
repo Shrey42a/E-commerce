@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function Social() {
   return (
@@ -25,5 +25,5 @@ function Social() {
     </>
   );
 }
-
-export default Social;
+const BetterSocial = memo(Social);
+export default BetterSocial;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -46,11 +46,14 @@ function Login() {
             </h1>
             <div className="flex flex-col p-4 mx-4 rounded-md">
               <div className="flex flex-col">
-                <label htmlFor="emial-address" className="sr-only">
-                  Username or email address
-                </label>
+                <div className="flex space-x-1">
+                  <label htmlFor="email" className="">
+                    Email
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
-                  id="email-address"
+                  id="email"
                   onBlur={handleBlur}
                   name="email"
                   type="email"
@@ -62,15 +65,18 @@ function Login() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 shadow-zinc-700 bx"
                 />
                 {touched.email && errors.email && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.email}
                   </div>
                 )}
               </div>
               <div className="flex flex-col mt-4">
-                <label htmlFor="pass" className="sr-only">
-                  Password
-                </label>
+                <div className="flex space-x-1">
+                  <label htmlFor="pass" className="">
+                    Password
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="pass"
                   name="password"
@@ -84,7 +90,7 @@ function Login() {
                   className="p-2 rounded-sm shadow-sm bg-slate-300 shadow-zinc-700 bx"
                 />
                 {touched.password && errors.password && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.password}
                   </div>
                 )}
@@ -133,4 +139,5 @@ function Login() {
     </>
   );
 }
-export default Login;
+const BetterLogin = memo(Login);
+export default BetterLogin;
