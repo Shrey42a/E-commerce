@@ -8,7 +8,7 @@ function ProductList({ products }) {
         {products.map(function (item) {
           return (
             <>
-              <TeamCard key={item.title} {...item}></TeamCard>
+              <TeamCard key={item.price} {...item}></TeamCard>
             </>
           );
         })}

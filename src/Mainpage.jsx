@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Card from "./Card";
 import Social from "./Social";
 
@@ -14,4 +14,5 @@ function Mainpage() {
     </>
   );
 }
-export default Mainpage;
+const BetterMainPage = memo(Mainpage);
+export default BetterMainPage;

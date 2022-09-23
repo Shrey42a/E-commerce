@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 function EmptyCart() {
@@ -28,4 +28,5 @@ function EmptyCart() {
     </>
   );
 }
-export default EmptyCart;
+const BetterEmptyCart = memo(EmptyCart);
+export default BetterEmptyCart;

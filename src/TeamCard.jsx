@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 function TeamCard({
@@ -53,5 +53,5 @@ function TeamCard({
     </Link>
   );
 }
-
-export default TeamCard;
+const BetterTeamCard = memo(TeamCard);
+export default BetterTeamCard;

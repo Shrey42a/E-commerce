@@ -21,5 +21,4 @@ function Detail({ details }) {
     </>
   );
 }
-
 export default Detail;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -38,7 +38,12 @@ function Forget() {
                 You will receive a link to create a new password via email.
               </h2>
               <div class="flex flex-col mt-4">
-                <label class="">Username or Email</label>
+                <div className="flex space-x-1">
+                  <label htmlFor="email" className="">
+                    Email
+                  </label>
+                  <h1 className="text-red-500">*</h1>
+                </div>
                 <input
                   id="email"
                   name="email"
@@ -52,7 +57,7 @@ function Forget() {
                   class="bg-slate-300 p-2 bx rounded-sm shadow-sm shadow-zinc-700"
                 />
                 {touched.email && errors.email && (
-                  <div className="font-semibold text-red-800">
+                  <div className="font-semibold text-red-500">
                     {errors.email}
                   </div>
                 )}
@@ -77,4 +82,5 @@ function Forget() {
     </>
   );
 }
-export default Forget;
+const BetterForget = memo(Forget);
+export default BetterForget;
