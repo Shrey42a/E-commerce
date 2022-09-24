@@ -1,54 +1,65 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CartRow from "./CartRow";
 import { getProductListm } from "./Api";
 
 function CartPage() {
+  const [productList, setProductList] = useState([]);
+  useEffect(function () {
+    const t = getProductListm();
+
+    t.then(function (ddata) {
+      setProductList(ddata.data.products);
+    });
+  }, []);
+  let data = productList.filter(function (item) {
+    return;
+  });
   return (
     <>
-      <div class="">
-        <div class="lg:grid border-t font-bold text-gray-700 lg:grid-cols-6 hidden justify-around text-xl bg-slate-100 border p-5">
+      <div className="">
+        <div className="justify-around hidden p-5 text-xl font-bold text-gray-700 border border-t lg:grid lg:grid-cols-6 bg-slate-100">
           <div></div>
           <div></div>
-          <div class="-ml-20">Product</div>
-          <div class="ml-7  grow flex">Price</div>
-          <div class="ml-9  grow flex">Quantity</div>
-          <div class="ml-16  grow flex">Total</div>
+          <div className="-ml-20">Product</div>
+          <div className="flex ml-7 grow">Price</div>
+          <div className="flex ml-9 grow">Quantity</div>
+          <div className="flex ml-16 grow">Total</div>
         </div>
-        <div class="mb-1">
-          <CartRow />
+        <div className="mb-1">
+          <CartRow products={data} />
         </div>
 
-        <div class="flex flex-col border-l lg:flex-row bg-slate-100 border-b border-gray-200 p-2 justify-between">
-          <div class="flex space-x-4 overflow-hidden justify-start">
+        <div className="flex flex-col justify-between p-2 border-b border-l border-gray-200 lg:flex-row bg-slate-100">
+          <div className="flex justify-start space-x-4 overflow-hidden">
             <input
               placeholder="Coupon code"
-              class="w-1/5 border shadow-zinc-700 -py-2 shadow-md px-2 border-gray-500"
+              className="w-1/5 px-2 border border-gray-500 shadow-md shadow-zinc-700 -py-2"
             />
-            <button class="m-1 p-2 bg-lime-400 text-white shadow-zinc-700 border shadow-md">
+            <button className="p-2 m-1 text-white border shadow-md bg-lime-400 shadow-zinc-700">
               Apply coupon
             </button>
           </div>
-          <button class="mt-2 px-2 lg:mt-0 py-2 bg-red-200 text-gray-400 border shadow-md">
+          <button className="px-2 py-2 mt-2 text-gray-400 bg-red-200 border shadow-md lg:mt-0">
             Update cart
           </button>
         </div>
 
-        <div class="flex justify-end">
-          <div class="font-semibold shadow-xl shadow-zinc-700 w-full md:w-3/5 lg:w-2/5 border m-4">
-            <h1 class="border-b p-2">Cart totals</h1>
-            <div class="p-4">
-              <div class="flex p-2 border-b justify-between">
+        <div className="flex justify-end">
+          <div className="w-full m-4 font-semibold border shadow-xl shadow-zinc-700 md:w-3/5 lg:w-2/5">
+            <h1 className="p-2 border-b">Cart totals</h1>
+            <div className="p-4">
+              <div className="flex justify-between p-2 border-b">
                 <h2>Subtotal</h2>
                 <h2>$13</h2>
               </div>
-              <div class="flex p-2 border-b justify-between">
+              <div className="flex justify-between p-2 border-b">
                 <h2>Total</h2>
                 <h2>$138</h2>
               </div>
             </div>
-            <div class="p-3">
-              <button class="rounded-sm w-full px-4 mt-2 lg:mt-0 py-2 bg-red-500 text-white border shadow-xl">
+            <div className="p-3">
+              <button className="w-full px-4 py-2 mt-2 text-white bg-red-500 border rounded-sm shadow-xl lg:mt-0">
                 Proceed to checkoutt
               </button>
             </div>
