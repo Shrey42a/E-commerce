@@ -85,6 +85,9 @@
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 12px;
 }
+.bg11 {
+  background: linear-gradient(#f09819 #edde5d);
+}
 
 .container .card:hover .face.face2 {
   transform: translateY(0);
