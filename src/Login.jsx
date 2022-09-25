@@ -68,12 +68,6 @@ function Login() {
                 >
                   Login
                 </button>
-                <button
-                  type="button"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm"
-                >
-                  Reset
-                </button>
                 <Link title="Home" to="/page">
                   <button className="p-2 px-4 mt-2 text-lg font-semibold text-white bg-red-600 rounded-sm">
                     Cancel
