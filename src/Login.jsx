@@ -1,7 +1,8 @@
 import React, { memo } from "react";
+import { Formik, Form, useFormik } from "formik";
 import { Link } from "react-router-dom";
-import { useFormik } from "formik";
 import * as Yup from "yup";
+import Input from "./Input";
 
 function Login() {
   function calloginApi(values) {
@@ -18,90 +19,50 @@ function Login() {
       .matches(/@/, "Must have a special character"),
   });
 
-  const {
-    handleSubmit,
-    values,
-    handleChange,
-    resetForm,
-    errors,
-    handleBlur,
-    touched,
-    isValid,
-  } = useFormik({
-    initialValues: {
-      email: "",
+  const initialValues = {
+    email: "",
       password: "",
-    },
-    onSubmit: calloginApi,
-    validationSchema: schema,
-  });
+  }
 
   return (
     <>
       <div className="flex items-center justify-center py-20 h-4/5 bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
-        <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
+        <Formik initialValues={initialValues}
+          onSubmit={calloginApi}
+          validationSchema={schema}
+          validateOnMount >
+        <Form className="w-full lg:w-1/2">
           <div className="px-2 py-8 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
               Login
             </h1>
             <div className="flex flex-col p-4 mx-4 rounded-md">
-              <div className="flex flex-col">
-                <div className="flex space-x-1">
-                  <label htmlFor="email" className="">
-                    Email
-                  </label>
-                  <h1 className="text-red-500">*</h1>
-                </div>
-                <input
-                  id="email"
-                  onBlur={handleBlur}
-                  name="email"
-                  type="email"
-                  required
-                  onChange={handleChange}
-                  value={values.email}
-                  placeholder="Put your email"
-                  autoComplete="email"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 shadow-zinc-700 bx"
-                />
-                {touched.email && errors.email && (
-                  <div className="font-semibold text-red-500">
-                    {errors.email}
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-col mt-4">
-                <div className="flex space-x-1">
-                  <label htmlFor="pass" className="">
-                    Password
-                  </label>
-                  <h1 className="text-red-500">*</h1>
-                </div>
-                <input
-                  id="pass"
-                  name="password"
-                  type="password"
-                  required
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  value={values.password}
-                  placeholder="Password"
-                  autoComplete="password"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 shadow-zinc-700 bx"
-                />
-                {touched.password && errors.password && (
-                  <div className="font-semibold text-red-500">
-                    {errors.password}
-                  </div>
-                )}
-              </div>
+              <Input
+                label="email"
+                id="email"
+                autoComplete="email"
+                name="email"
+                type="email"
+                className=""
+                placeholder="Put your email" />
+                
+              <Input
+                id="pass"
+                label="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                className=""
+                autoComplete="password"
+              />
+             
+              
               <div className="flex mt-4 space-x-2">
                 <input id="check" type="checkbox" className="" />
                 <h3>Remember me</h3>
               </div>
               <div className="flex space-x-2">
                 <button
-                  disabled={!isValid}
                   type="submit"
                   className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm disabled:cursor-not-allowed disabled:bg-red-400"
                 >
@@ -109,7 +70,6 @@ function Login() {
                 </button>
                 <button
                   type="button"
-                  onClick={resetForm}
                   className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm"
                 >
                   Reset
@@ -134,7 +94,8 @@ function Login() {
               </div>
             </div>
           </div>
-        </form>
+          </Form>
+          </Formik>
       </div>
     </>
   );
