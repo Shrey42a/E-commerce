@@ -7,8 +7,8 @@ function Card() {
       <div className="container">
         <div className="card">
           <div className="face face1 bg-gradient-to-l from-cyan-200 via-teal-10 to-white">
-            <div className="content bg-gradient-to-l from-cyan-200 via-teal-10 to-white">
-              <h3 className="bg-transparent">Amazon</h3>
+            <div className="content glass2">
+              <h3 className="bg-transparent">S@42</h3>
             </div>
           </div>
           <div className="face face2">
