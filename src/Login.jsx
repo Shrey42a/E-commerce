@@ -26,13 +26,13 @@ function Login() {
 
   return (
     <>
-      <div className="flex items-center justify-center py-20 h-4/5 bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
+      <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient">
         <Formik initialValues={initialValues}
           onSubmit={calloginApi}
           validationSchema={schema}
           validateOnMount >
         <Form className="w-full lg:w-1/2">
-          <div className="px-2 py-8 bg10">
+          <div className="px-2 py-8 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
               Login
             </h1>
@@ -64,12 +64,12 @@ function Login() {
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm disabled:cursor-not-allowed disabled:bg-red-400"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-red-400"
                 >
                   Login
                 </button>
                 <Link title="Home" to="/page">
-                  <button className="p-2 px-4 mt-2 text-lg font-semibold text-white bg-red-600 rounded-sm">
+                  <button className="p-2 px-4 mt-2 text-lg font-semibold text-white bg-red-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-red-600">
                     Cancel
                   </button>
                 </Link>

@@ -20,7 +20,7 @@ function Forget() {
   
   return (
     <>
-      <div className="flex items-center justify-center py-28 h-max bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
+      <div className="flex items-center justify-center px-2 py-28 lg:py-44 h-max gradient">
         <Formik
           initialValues={initialValues}
           validateOnMount
@@ -28,9 +28,9 @@ function Forget() {
           onSubmit={calloginApi}
         >
         <Form className="w-full lg:w-1/2">
-          <div className="bg10 py-8 px-2">
-            <div className="rounded-md mx-4 p-4">
-              <h2>
+          <div className="px-2 py-8 shadow-sm shadow-zinc-700 bg10">
+            <div className="p-4 mx-4 rounded-md">
+              <h2 className="text-lg font-semibold">
                 Lost your password? Please enter your username or email address.
                 You will receive a link to create a new password via email.
               </h2>
@@ -39,19 +39,20 @@ function Forget() {
                   id="email"
                   name="email"
                   type="email"
+                  label="Email"
                   required
                   placeholder="Enter your email"
                   autoComplete="email"
-                  className="bg-slate-300 p-2 bx rounded-sm shadow-sm shadow-zinc-700"
+                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
                 />
-              <div className="flex mt-4 space-x-2">
+              <div className="flex flex-col mt-4 lg:space-x-2 lg:flex-row">
                 <button
-                  className="bg-red-600 disabled:bg-red-400 disabled:cursor-not-allowed rounded-sm p-2 px-4 font-semibold text-white mt-2"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:bg-red-400 disabled:cursor-not-allowed"
                 >
                   Reset Password
                 </button>
                 <Link to="/login">
-                  <button className="rounded-sm bg-red-600 text-lg p-2 px-4 font-semibold text-white mt-2">
+                  <button className="p-2 px-4 mt-2 text-lg font-semibold text-white bg-red-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-red-600">
                     Cancel
                   </button>
                 </Link>

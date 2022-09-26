@@ -14,31 +14,31 @@ function TeamCard({
 }) {
   return (
     <Link title="Details" to={"/productdetail/" + id}>
-      <div className="m-2 rounded-md shadow-md bg10 outline outline-transparent shrink shadow-zinc-800 w-60 lg:w-80">
+      <div className="m-2 overflow-hidden rounded-md shadow-md bg10 outline outline-transparent shrink shadow-zinc-800 w-60 lg:w-80">
         <div className="flex max-w-xs">
-          <div className="w-full aspect-square">
-            <img className="object-cover w-full h-full" src={thumbnail}></img>
+          <div className="w-full overflow-hidden aspect-square">
+            <img className="object-cover w-full h-full transition ease-in-out hover:scale-125" src={thumbnail}></img>
           </div>
           <div className="flex items-center justify-center w-12 h-12 -mt-2 -ml-10 -mr-4 bg-red-500 rounded-full shadow-xl shadow-zinc-700">
             <h1 className="text-lg font-bold text-center">Sale!</h1>
           </div>
         </div>
-        <h3 className="ml-2 text-sm text-slate-400">{category}</h3>
+        <h3 className="ml-2 text-sm text-slate-600">{category}</h3>
         <h1 className="ml-2 text-2xl font-bold text-red-500 truncate">
           {title}
         </h1>
         <div className="flex ml-2">
-          <h1 className="text-lg text-white">Rating {rating}</h1>
+          <h1 className="text-lg text-gray-600">Rating {rating}</h1>
         </div>
         <div className="flex justify-between">
           <div className="">
-            <h2 className="ml-2 text-lg text-white decoration-2">
+            <h2 className="ml-2 text-lg text-gray-600 decoration-2">
               Discount {discountPercentage}%
             </h2>
-            <h3 className="ml-2 text-lg font-semibold text-white">$ {price}</h3>
-            <h1 className="ml-2 text-sm text-white">Stock {stock}</h1>
+            <h3 className="ml-2 text-lg font-semibold text-gray-600">$ {price}</h3>
+            <h1 className="ml-2 text-sm text-gray-600">Stock {stock}</h1>
             <div className="flex flex-col">
-              <h1 className="ml-2 overflow-hidden text-lg font-semibold text-white truncate">
+              <h1 className="ml-2 overflow-hidden text-lg font-semibold text-gray-600 truncate">
                 Brand "{brand}"
               </h1>
             </div>
