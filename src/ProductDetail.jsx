@@ -45,15 +45,15 @@ function ProductDetail({ onAddToCart }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-cover bg-center bg-no-repeat bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)] lg:h-screen">
+      <div className="flex flex-col justify-center bg-center bg-no-repeat bg-cover gradient lg:h-screen">
         <div className="flex justify-center p-4">
-          <div className="flex flex-col p-2 shadow-md bg10 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
+          <div className="flex flex-col p-2 shadow-sm bg10 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
               <img
-                className="w-full shadow-md h-80 lg:h-96 lg:w-full shadow-zinc-700 md:h-full sm:h-full"
+                className="w-full shadow-sm h-80 lg:h-96 lg:w-full shadow-zinc-700 md:h-full sm:h-full"
                 src={product.thumbnail}
               ></img>
-              <div className="flex items-center justify-center w-16 h-16 p-4 mr-12 -mt-2 -ml-10 bg-red-500 rounded-full shadow-xl animate-pulse shadow-zinc-700">
+              <div className="flex items-center justify-center w-16 h-16 p-4 mr-12 -mt-2 -ml-10 bg-red-500 rounded-full shadow-md animate-pulse shadow-zinc-700">
                 <h1 className="font-bold text-center">Sale!</h1>
               </div>
             </div>
@@ -87,16 +87,16 @@ function ProductDetail({ onAddToCart }) {
                   onChange={handleCountChange}
                   value={count}
                   type="number"
-                  className="w-20 px-2 text-2xl text-center rounded-lg shadow-md shadow-zinc-600 bg-slate-200"
+                  className="w-12 px-2 text-2xl text-center rounded-full shadow-md shadow-zinc-600 bg-slate-200"
                 ></input>
-                <button onClick={handleButtonClick} className="btnn">
+                <button onClick={handleButtonClick} className="shadow-sm shadow-zinc-600 btnn">
                   Add to cart
                 </button>
               </div>
               <div className="flex items-center mt-2 space-x-4">
-                <button className="btnn">Buy Now</button>
+                <button className="shadow-sm btnn shadow-zinc-600">Buy Now</button>
                 <Link title="Products" to="/page">
-                  <button className="p-2 px-3 py-1 text-lg font-semibold text-white rounded-lg shadow-md bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
+                  <button className="p-2 px-3 py-1 text-lg font-semibold text-white rounded-lg shadow-sm bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
                     Back
                   </button>
                 </Link>
@@ -107,7 +107,7 @@ function ProductDetail({ onAddToCart }) {
         <div className="flex items-center justify-around p-2 mt-2 space-x-2">
           {id > 1 && (
             <Link title="Prev" to={"/productdetail/" + (id - 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md bg9 hover:bg10 shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm bg9 hover:bg10 shadow-zinc-700 outline-0">
                 Prev
               </button>
             </Link>
@@ -117,7 +117,7 @@ function ProductDetail({ onAddToCart }) {
 
           {id < 100 && (
             <Link title="Next" to={"/productdetail/" + (id + 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-white rounded-lg shadow-md hover:bg10 bg9 text-md shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm hover:bg10 bg9 text-md shadow-zinc-700 outline-0">
                 Next
               </button>
             </Link>

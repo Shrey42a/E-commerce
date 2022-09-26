@@ -26,7 +26,7 @@ class Mp3a extends Component {
         </p>
         <div className="flex justify-center">
         <button
-          className="w-1/2 h-12 text-lg font-bold text-white btnn"
+          className="w-1/2 h-12 text-lg font-bold text-white bg10 btnn"
           onClick={this.playPause}
         >
           Play | Pause

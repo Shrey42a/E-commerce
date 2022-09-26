@@ -42,10 +42,10 @@ function Signup() {
    
   return (
     <>
-      <div className="flex items-center justify-center py-20 h-4/5 bg-[url(https://images.wallpaperscraft.com/image/single/question_marks_figures_3d_112755_3840x2160.jpg)]">
+      <div className="flex items-center justify-center px-2 py-8 h-4/5 gradient">
         <Formik initialValues={initialValues} validateOnMount validationSchema={schema} onSubmit={calloginApi} >
         <Form className="w-full lg:w-1/2">
-          <div className="px-2 py-8 bg10">
+          <div className="px-2 py-4 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
               Sign Up
             </h1>
@@ -109,18 +109,18 @@ function Signup() {
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm disabled:bg-red-400 disabled:cursor-not-allowed"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:bg-red-400 disabled:cursor-not-allowed"
                 >
                   Sign Up
                 </button>
                 <button
                   type="button"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-red-600 rounded-sm hover:bg-red-700"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-teal-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-red-700"
                 >
                   Reset
                 </button>
                 <Link to="/page">
-                  <button className="px-4 py-2 mt-2 text-lg font-semibold text-white bg-red-600 rounded-sm">
+                  <button className="px-4 py-2 mt-2 text-lg font-semibold text-white bg-red-600 rounded-sm shadow-sm shadow-zinc-900">
                     Cancel
                   </button>
                 </Link>
