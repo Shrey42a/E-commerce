@@ -15,6 +15,19 @@
   transition: 0.8s;
   border-radius: 5%;
 }
+.bg13 {
+ position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 10;
+  transform: translateY(100px);
+}
+.bg13:hover {
+  transform: translateY(0);
+  box-shadow: 0px 0 40px #000000, 5px 25px 20px #222525;
+}
 
 .container .card .face.face1 {
   position: relative;
@@ -88,6 +101,7 @@
 }
 .bg11 {
   background: linear-gradient(#f09819 #edde5d);
+  background-color: linear-gradient(#f09819 #edde5d);
 }
 
 .container .card:hover .face.face2 {
@@ -232,6 +246,23 @@ span {
     transform: rotate(405deg);
   }
 }
+/*bg gradint */
+.bg20 {
+  background: linear-gradient(-45deg, #ee7752, #df7fa4, #9581f4,#23a6d5, #a4a5a5);
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+}
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 50% 100%;
+}
+100% {
+  background-position: 100% 0%;
+}
+}
 
 .loader-04 {
   border: 2px solid #00db07;
@@ -269,4 +300,15 @@ span {
   color: inherit;
   vertical-align: middle;
   pointer-events: none;
+}
+
+/* about */
+
+.bg12
+{
+  background:url('https://s-media-cache-ak0.pinimg.com/736x/f4/ac/6a/f4ac6aac3afb587f6cae04155656fca3.jpg');
+}
+.bg5
+{
+  background:url('https://images.wallpaperscraft.com/image/single/lamp_wall_brick_137605_3840x2400.jpg');
 }
