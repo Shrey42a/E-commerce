@@ -1,11 +1,10 @@
-import React, { memo } from "react";
-import { Formik, Form, useFormik } from "formik";
+import React from "react";
+import { withFormik } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Input from "./Input";
 
-function Login() {
-  function calloginApi(values) {
+function calloginApi(values) {
     console.log("Email", values.email, "password", values.password);
   }
 
@@ -24,39 +23,47 @@ function Login() {
       password: "",
   }
 
+export function Login({handleSubmit, values, errors, touched, handleChange, handleBlur}) {
   return (
     <>
       <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient">
-        <Formik initialValues={initialValues}
-          onSubmit={calloginApi}
-          validationSchema={schema}
-          validateOnMount >
-        <Form className="w-full lg:w-1/2">
+        
+        <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-8 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
               Login
             </h1>
-            <div className="flex flex-col p-4 mx-4 rounded-md">
+              <div className="flex flex-col p-4 mx-4 rounded-md">
+                <div className="mt-2">
               <Input
+                values={values.email}
+                error={errors.email}
+                touched={touched.email}
+                onChange={handleChange}
+                onBlur={handleBlur}   
                 label="email"
-                id="email"
+                id="Email"
                 autoComplete="email"
                 name="email"
                 type="email"
                 className=""
                 placeholder="Put your email" />
-                
+
               <Input
+                values={values.password}
+                error={errors.password}
+                touched={touched.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 id="pass"
-                label="password"
+                label="Password"
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder="Enter Password"
                 className=""
                 autoComplete="password"
-              />
-             
-              
+                /></div>
+                
               <div className="flex mt-4 space-x-2">
                 <input id="check" type="checkbox" className="" />
                 <h3>Remember me</h3>
@@ -88,11 +95,13 @@ function Login() {
               </div>
             </div>
           </div>
-          </Form>
-          </Formik>
+          </form>
+         
       </div>
     </>
   );
 }
-const BetterLogin = memo(Login);
-export default BetterLogin;
+const myHoc = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: calloginApi });
+
+const EasyLogin = myHoc(Login);
+export default EasyLogin;

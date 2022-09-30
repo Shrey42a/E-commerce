@@ -52,54 +52,54 @@ function Signup() {
             <div className="p-4 mx-4 rounded-md">
 
                 <Input
-                  label="name"
+                  label="Name"
                   id="name"
                   name="name"
                   type="text"
                   required
                   placeholder="Enter your name"
                   autoComplete="name"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm"
                 />
                 <Input
                   id="phone"
-                  label="phone"
+                  label="Phone"
                   name="phone"
                   type="tel"
                   required
                   placeholder="Enter your phone number"
                   autoComplete="phone"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm"
                 />
                 <Input
                   id="email-address"
-                  label="email"
+                  label="Email"
                   name="email"
                   type="email"
                   required
-                  placeholder="Put your email"
+                  placeholder="Enter your email"
                   autoComplete="email"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm"
                 />
                 <Input
-                  label="password"
+                  label="Password"
                   id="pass"
                   name="password"
                   type="password"
                   required
-                  placeholder="Password"
+                  placeholder="Create Password"
                   autoComplete="password"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm"
                 />
                 <Input
                   id="confirmPassword"
-                  label="confirmPassword"
+                  label="Confirm Password"
                   name="confirmPassword"
                   type="password"
                   required
-                  placeholder="Password"
+                  placeholder="Confirm Password"
                   autoComplete="password"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm bg-transparent"
                 />
 
               <div className="flex mt-4 space-x-2">

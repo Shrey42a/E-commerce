@@ -10,10 +10,10 @@ function Input({ name, label, id, className, ...rest }) {
     const { value, onBlur, onChange } = data;
     const { error, touched } = meta;
 
-    let borderClass = "border-neutral-300 focus:outline-lime-400";
+    let borderClass = "border-b-2 border-black focus:outline-none border-t-hidden border-r-hidden border-l-hidden";
 
     if (error && touched) {
-        borderClass = "border-red-500 border-2";
+        borderClass = "border-red-500 border-b-2 border-t-hidden border-l-hidden focus:outline-none border-r-hidden outline-0";
     }
 
     return(
@@ -32,7 +32,7 @@ function Input({ name, label, id, className, ...rest }) {
                  onChange={onChange}
                  onBlur={onBlur}
                  name={name}
-                  className={ "p-2 rounded-sm focus:ring-lime-400 focus:outline-none focus:z-10 bg-slate-300 bx " + className + " " + borderClass } {...rest}
+                  className={ "place p-2 rounded-sm focus:z-10 bg-transparent " + className + " " + borderClass } {...rest}
                 />
                 {touched && error && (
                   <div className="font-semibold text-red-500">

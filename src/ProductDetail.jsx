@@ -45,7 +45,7 @@ function ProductDetail({ onAddToCart }) {
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-center bg-no-repeat bg-cover gradient lg:h-screen">
+      <div className="flex flex-col justify-center bg12 bg-fixed lg:h-screen">
         <div className="flex justify-center p-4">
           <div className="flex flex-col p-2 shadow-sm bg10 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">

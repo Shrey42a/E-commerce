@@ -11,22 +11,29 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Forget from "./Forget";
 import Header from "./Header";
+import About from "./About";
+import Contact from "./Contact";
 
 function App() {
   const savedDataString = localStorage.getItem("My-cart") || "{}";
   const savedData = JSON.parse(savedDataString);
 
   const [cart, setCart] = useState(savedData);
+ 
 
   function handleAddToCart(productId, count) {
     const oldCount = cart[productId] || 0;
     const newCart = { ...cart, [productId]: oldCount + count };
+    updateCart(newCart);
 
-    setCart(newCart);
-
+  }
+  
+    function updateCart(newCart) {
+      setCart(newCart);  
     const cartString = JSON.stringify(newCart);
     localStorage.setItem("My-cart", cartString);
-  }
+    }
+    
 
   const totalCount = Object.keys(cart).reduce(function (output, current) {
     return output + cart[current];
@@ -42,8 +49,10 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/page" element={<Page />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
             <Route path="/forget" element={<Forget />}></Route>
-            <Route path="/cart" element={<CartPage2 />}></Route>
+            <Route path="/cart" element={<CartPage2 cart={cart} updateCart={updateCart} />}></Route>
             <Route path="*" element={<Error404 />}></Route>
             <Route
               path="/productdetail/:id"

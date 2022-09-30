@@ -43,7 +43,7 @@ function Forget() {
                   required
                   placeholder="Enter your email"
                   autoComplete="email"
-                  className="p-2 rounded-sm shadow-sm bg-slate-300 bx shadow-zinc-700"
+                  className="p-2 rounded-sm"
                 />
               <div className="flex flex-col mt-4 lg:space-x-2 lg:flex-row">
                 <button
