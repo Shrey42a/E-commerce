@@ -8,7 +8,7 @@ function About() {
       <div className="flex justify-center bg-center bg5 h-max lg:h-screen items-top lg:items-center">
         <div className="flex flex-col w-full p-2 my-20 lg:w-4/5 h-1/2 lg:h-4/5 lg:my-0 lg:flex-row bg10">
            <div className="w-full h-1/2 lg:w-1/2">
-              <img className="animate__delay-15s animate__slow animate__zoomInUp animate__animated ref" src="src/Logo4.png"></img>          
+              <img className="h-auto max-w-full animate__delay-15s animate__slow animate__zoomInUp animate__animated ref" src="src/Logo4.png" alt="..."></img>          
            </div>
             <div className="flex flex-col items-center w-full h-full p-4 py-4 lg:w-1/2 lg:py-16">
              <h1 className="text-2xl font-semibold text-teal-800 underline lg:text-5xl">HI THIS IS @42 SHOPPING</h1>  

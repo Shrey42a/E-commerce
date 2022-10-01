@@ -9,6 +9,7 @@ function Navbar({ productCount }) {
           <div className="flex flex-col-rev">
             <div>
               <img
+                alt="..."
                 src="src/Logo4.png"
                 className="w-40 h-24 scale-125 border-transparent rounded-full hover:scale-150"
               ></img>
