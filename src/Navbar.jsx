@@ -10,7 +10,7 @@ function Navbar({ productCount }) {
             <div>
               <img
                 alt="..."
-                src="src/Logo4.png"
+                src="https://media.discordapp.net/attachments/933654325127938101/1025607932768960613/Logo4.png?width=789&height=492"
                 className="w-40 h-24 scale-125 border-transparent rounded-full hover:scale-150"
               ></img>
             </div>

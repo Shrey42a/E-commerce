@@ -10,6 +10,7 @@ module.exports = {
         pic28: "url('src/pic28.jpg')",
         pic29: "url('src/pic29.jpg')",
         pic32: "url('src/pic32.jpg')",
+        pic33: "url('src/Logo4.png')",
       },
     },
   },
