@@ -17,7 +17,7 @@ function TeamCard({
       <div className="m-2 overflow-hidden rounded-md shadow-md bg10 outline outline-transparent shrink shadow-zinc-800 w-60 lg:w-80">
         <div className="flex max-w-xs">
           <div className="w-full overflow-hidden aspect-square">
-            <img className="object-cover w-full h-full transition ease-in-out hover:scale-125" src={thumbnail}></img>
+            <img className="object-cover w-full h-full transition duration-300 ease-in-out hover:scale-125" src={thumbnail}></img>
           </div>
           <div className="flex items-center justify-center w-12 h-12 -mt-2 -ml-10 -mr-4 bg-red-500 rounded-full shadow-xl shadow-zinc-700">
             <h1 className="text-lg font-bold text-center">Sale!</h1>
