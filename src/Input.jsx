@@ -7,7 +7,7 @@ function Input({ name, label, id, className, ...rest }) {
 
     const [data, meta] = field;
 
-    const { value, onBlur, onChange } = data;
+    const { onBlur, onChange } = data;
     const { error, touched } = meta;
 
     let borderClass = "border-b-2 border-black focus:outline-none border-t-hidden border-r-hidden border-l-hidden";
@@ -28,7 +28,6 @@ function Input({ name, label, id, className, ...rest }) {
                 </div>
                 <input
                  id={id}
-                 value={value}
                  onChange={onChange}
                  onBlur={onBlur}
                  name={name}
