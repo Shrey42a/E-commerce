@@ -3,21 +3,21 @@ import React, { memo } from "react";
 function Footer() {
   return (
     <>
-      <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="flex flex-row">
-                    <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                        <div class="logo-widget footer-widget">
-                            <figure class="logo-box h-40 w-60"><a><img src="https://media.discordapp.net/attachments/933654325127938101/1025607932768960613/Logo4.png?width=789&height=492" alt="..." /></a></figure>
-                            <div class="text">
+      <footer className="main-footer">
+        <div className="container">
+            <div className="footer-content">
+                <div className="flex flex-row">
+                    <div className="col-lg-4 col-md-6 col-sm-12 footer-column">
+                        <div className="logo-widget footer-widget">
+                            <figure className="h-40 logo-box w-60"><a><img src="https://media.discordapp.net/attachments/933654325127938101/1025607932768960613/Logo4.png?width=789&height=492" alt="..." /></a></figure>
+                            <div className="text">
                                 <p>This website provides you a better quality of products, here you an buy any kind of product. This is @42Shopping the better ecommerce website near you....!</p>
                             </div>
-                            <ul class="footer-social">
-                                <li><a><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a><i class="fab fa-twitter"></i></a></li>
-                                <li><a><i class="fab fa-vimeo-v"></i></a></li>
-                                <li><a><i class="fab fa-google-plus-g"></i></a></li>
+                            <ul className="footer-social">
+                                <li><a><i className="fab fa-facebook-f"></i></a></li>
+                                <li><a><i className="fab fa-twitter"></i></a></li>
+                                <li><a><i className="fab fa-vimeo-v"></i></a></li>
+                                <li><a><i className="fab fa-google-plus-g"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -1,34 +1,34 @@
-import React, { memo } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Formik, Form } from "formik";
+import { withFormik } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
+import axios from "axios";
 
-function Signup() {
-  function calloginApi(values) {
-    console.log(
-      "Email",
-      values.email,
-      "password",
-      values.password,
-      "name",
-      values.name,
-      "phone",
-      values.phone
-    );
+
+function callSignupApi(values, bag) {
+    axios.post("https://myeasykart.codeyogi.io/signup", {  fullName: values.name, email: values.email, password: values.password, })
+      .then((response) => {
+        const { user, token } = response.data;
+        localStorage.setItem("token", token);
+        console.log(bag);
+        bag.props.setUser(user);
+      })
+      .catch(() => {
+        bag.props.setAlert({type: "warning", message: "Something went wrong"})
+      });
   }
+
 
   const schema = Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().email().required(),
     phone: Yup.string().required(),
-    confirmPassword: Yup.string().required().min(8).max(18).uppercase(),
+    confirmPassword: Yup.string().required().min(6).max(14),
     password: Yup.string()
       .required()
-      .min(8)
-      .max(18)
-      .uppercase()
-      .matches(/@/, "Must have a special character"),
+      .min(6)
+      .max(14)
   });
 
   
@@ -39,19 +39,24 @@ function Signup() {
     name: "",
     confirmPassword: "",
   }
-   
+export function Signup({ handleSubmit, values, errors, touched, handleChange, handleBlur }) {
+
   return (
     <>
       <div className="flex items-center justify-center px-2 py-8 h-4/5 gradient">
-        <Formik initialValues={initialValues} validateOnMount validationSchema={schema} onSubmit={calloginApi} >
-        <Form className="w-full lg:w-1/2">
+        <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-4 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
               Sign Up
             </h1>
             <div className="p-4 mx-4 rounded-md">
 
-                <Input
+              <Input
+                  values={values.name}
+                  error={errors.name}
+                  touched={touched.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   label="Name"
                   id="name"
                   name="name"
@@ -71,7 +76,12 @@ function Signup() {
                   autoComplete="phone"
                   className="p-2 rounded-sm"
                 />
-                <Input
+              <Input
+                  values={values.email}
+                  error={errors.email}
+                  touched={touched.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur} 
                   id="email-address"
                   label="Email"
                   name="email"
@@ -81,7 +91,12 @@ function Signup() {
                   autoComplete="email"
                   className="p-2 rounded-sm"
                 />
-                <Input
+              <Input
+                  values={values.password}
+                  error={errors.password}
+                  touched={touched.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                   label="Password"
                   id="pass"
                   name="password"
@@ -99,7 +114,7 @@ function Signup() {
                   required
                   placeholder="Confirm Password"
                   autoComplete="password"
-                  className="p-2 rounded-sm bg-transparent"
+                  className="p-2 bg-transparent rounded-sm"
                 />
 
               <div className="flex mt-4 space-x-2">
@@ -115,7 +130,7 @@ function Signup() {
                 </button>
                 <button
                   type="button"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-teal-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-red-700"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-teal-500 rounded-sm shadow-sm disabled:bg-gray-400 shadow-zinc-900 hover:bg-red-700"
                 >
                   Reset
                 </button>
@@ -132,11 +147,13 @@ function Signup() {
               </Link>
             </div>
           </div>
-          </Form>
-          </Formik>
+          </form>
       </div>
     </>
   );
 }
-const BetterSignup = memo(Signup);
-export default BetterSignup;
+
+const myHoc = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: callSignupApi });
+
+const EasySignup = myHoc(Signup);
+export default EasySignup;

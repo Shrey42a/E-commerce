@@ -3,19 +3,31 @@ import { withFormik } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Input from "./Input";
+import axios from "axios";
+import withUser from "./withUser";
+import withAlert from "./withAlert";
 
-function calloginApi(values) {
-    console.log("Email", values.email, "password", values.password);
+function calloginApi(values, bag) {
+
+  axios.post("https://myeasykart.codeyogi.io/login", { email: values.email, password: values.password, })
+    .then((response) => {
+    const { user, token } = response.data;
+        localStorage.setItem("token", token);
+        console.log(bag);
+        bag.props.setUser(user);
+        bag.props.setAlert({type: "success", message: "Welcome you'd login successfully"});
+    })
+    .catch(() => {
+      bag.props.setAlert({type: "error", message: "Invalid Credentials " + values.password, });
+  })
   }
 
   const schema = Yup.object().shape({
     email: Yup.string().email().required(),
     password: Yup.string()
       .required()
-      .min(8)
-      .max(18)
-      .uppercase()
-      .matches(/@/, "Must have a special character"),
+      .min(6)
+      .max(14)
   });
 
   const initialValues = {
@@ -23,11 +35,10 @@ function calloginApi(values) {
       password: "",
   }
 
-export function Login({handleSubmit, values, errors, touched, handleChange, handleBlur}) {
+export function Login({ handleSubmit, values, errors, handleChange, handleBlur }) {
   return (
     <>
-      <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient">
-        
+      <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient"> 
         <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-8 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">
@@ -38,7 +49,6 @@ export function Login({handleSubmit, values, errors, touched, handleChange, hand
               <Input
                 values={values.email}
                 error={errors.email}
-                touched={touched.email}
                 onChange={handleChange}
                 onBlur={handleBlur}   
                 label="email"
@@ -51,8 +61,7 @@ export function Login({handleSubmit, values, errors, touched, handleChange, hand
 
               <Input
                 values={values.password}
-                error={errors.password}
-                touched={touched.password}
+                error={errors.password}               
                 onChange={handleChange}
                 onBlur={handleBlur}
                 id="pass"
@@ -71,7 +80,7 @@ export function Login({handleSubmit, values, errors, touched, handleChange, hand
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-red-400"
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm disabled:bg-gray-400 shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-red-400"
                 >
                   Login
                 </button>
@@ -96,12 +105,11 @@ export function Login({handleSubmit, values, errors, touched, handleChange, hand
             </div>
           </div>
           </form>
-         
       </div>
     </>
   );
 }
-const myHoc = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: calloginApi });
+const FormikLogin = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: calloginApi })(Login);
 
-const EasyLogin = myHoc(Login);
-export default EasyLogin;
+export default withAlert(withUser(FormikLogin));
+

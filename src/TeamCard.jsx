@@ -30,8 +30,7 @@ function TeamCard({
         <div className="flex ml-2">
           <h1 className="text-lg text-gray-600">Rating {rating}</h1>
         </div>
-        <div className="flex justify-between">
-          <div className="">
+        <div className="flex flex-col justify-between">
             <h2 className="ml-2 text-lg text-gray-600 decoration-2">
               Discount {discountPercentage}%
             </h2>
@@ -43,11 +42,10 @@ function TeamCard({
               </h1>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex">
             <button className="w-16 h-10 p-2 mr-6 text-lg font-semibold text-center rounded-lg shadow-lg shadow-zinc-600 text-slate-600 hover:bg-lime-500 bg-lime-400">
               Buy
             </button>
-          </div>
         </div>
       </div>
     </Link>
