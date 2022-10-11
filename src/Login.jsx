@@ -8,7 +8,6 @@ import withUser from "./withUser";
 import withAlert from "./withAlert";
 
 function calloginApi(values, bag) {
-
   axios.post("https://myeasykart.codeyogi.io/login", { email: values.email, password: values.password, })
     .then((response) => {
     const { user, token } = response.data;
@@ -33,7 +32,7 @@ function calloginApi(values, bag) {
   const initialValues = {
     email: "",
       password: "",
-  }
+}
 
 export function Login({ handleSubmit, values, errors, handleChange, handleBlur }) {
   return (
@@ -80,7 +79,8 @@ export function Login({ handleSubmit, values, errors, handleChange, handleBlur }
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm disabled:bg-gray-400 shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed disabled:bg-red-400"
+                  
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm disabled:bg-gray-400 shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed"
                 >
                   Login
                 </button>

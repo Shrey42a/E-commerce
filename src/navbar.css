@@ -141,7 +141,8 @@
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    margin-left: -70px;
+    margin-left: -120px;
+    margin-top: -20px;
     padding-left: 20px;
     transition: transform 0.7s ease-in-out;
     overflow: scroll;
@@ -195,6 +196,18 @@
   .navbar-container input[type="checkbox"]:checked ~ .logo {
     display: none;
   }
+}
+
+.bg42 {
+  width: 100%;
+  height: auto;
+  color: rgba(13, 16, 51, 0.9);
+  background: -webkit-linear-gradient(0deg, rgba(218,232,234,0.91) 0, rgba(199,203,226,0.62) 70%, rgba(217,218,224,0.73) 94%, rgba(217,218,224,0.73) 100%), url("https://enjoycss.com/bg-img/custom/30952-1iwszzh.e7aj.jpg");
+  background: -moz-linear-gradient(90deg, rgba(218,232,234,0.91) 0, rgba(199,203,226,0.62) 70%, rgba(217,218,224,0.73) 94%, rgba(217,218,224,0.73) 100%), url("https://enjoycss.com/bg-img/custom/30952-1iwszzh.e7aj.jpg");
+  background: linear-gradient(90deg, rgba(218,232,234,0.91) 0, rgba(199,203,226,0.62) 70%, rgba(217,218,224,0.73) 94%, rgba(217,218,224,0.73) 100%), url("https://enjoycss.com/bg-img/custom/30952-1iwszzh.e7aj.jpg");
+  background-position: 50% 50%, 35% 37%;
+  -webkit-background-size: auto auto, cover;
+  background-size: auto auto, cover;
 }
 
 /*Header*/
@@ -290,164 +303,6 @@
 }
 
 /* Login form*/
-
-*,
-:after,
-:before {
-  box-sizing: border-box;
-}
-.clearfix:after,
-.clearfix:before {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-  display: block;
-}
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.login-wrap {
-  width: 100%;
-  margin: auto;
-  max-width: 525px;
-  min-height: 550px;
-  position: relative;
-}
-.login-html {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-.login-html .sign-in-htm,
-.login-html .sign-up-htm {
-  top: 0;
-  left: 0;
-  color: #fff;
-  right: 0;
-  bottom: 0;
-
-  position: absolute;
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  transition: all 0.4s linear;
-}
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check {
-  display: none;
-}
-
-.login-form .group .label,
-.login-form .group .button {
-  text-transform: uppercase;
-  color: #fff;
-}
-.login-html .tab {
-  cursor: pointer;
-  color: rgba(124, 124, 124, 0.904);
-  text-transform: uppercase;
-}
-.login-html .tab {
-  font-size: 22px;
-  margin-right: 15px;
-  padding-bottom: 5px;
-  margin: 0 15px 10px 0;
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-}
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab {
-  color: rgb(216, 230, 25);
-  border-color: #1161ee;
-}
-.login-form {
-  min-height: 345px;
-  position: relative;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-.login-form .group {
-  margin-bottom: 8px;
-}
-.login-form .group .label,
-.login-form .group .input,
-.login-form .group .button {
-  width: 100%;
-  color: #fff;
-  display: block;
-}
-.login-form .group .input {
-  border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
-}
-.login-form .group input[data-type="password"] {
-  -webkit-text-security: circle;
-}
-.login-form .group .label {
-  color: #aaa;
-  font-size: 12px;
-}
-.login-form .group label .icon:before,
-.login-form .group label .icon:after {
-  content: "";
-  width: 10px;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  transition: all 0.2s ease-in-out 0s;
-}
-.login-form .group label .icon:before {
-  left: 3px;
-  width: 5px;
-  bottom: 6px;
-  transform: scale(0) rotate(0);
-}
-.login-form .group label .icon:after {
-  top: 6px;
-  right: 0;
-  transform: scale(0) rotate(0);
-}
-.login-form .group .check:checked + label {
-  color: #fff;
-}
-.login-form .group .check:checked + label .icon {
-  background: #1161ee;
-}
-.login-form .group .check:checked + label .icon:before {
-  transform: scale(1) rotate(45deg);
-}
-.login-form .group .check:checked + label .icon:after {
-  transform: scale(1) rotate(-45deg);
-}
-.login-html
-  .sign-in:checked
-  + .tab
-  + .sign-up
-  + .tab
-  + .login-form
-  .sign-in-htm {
-  transform: rotate(0);
-}
-.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
-  transform: rotate(0);
-}
-
-.hr {
-  height: 2px;
-  margin: 30px 0 5px 0;
-  background: rgba(255, 255, 255, 0.2);
-}
-.foot-lnk {
-  text-align: center;
-  cursor: pointer;
-}
-
 .bx {
   box-shadow: inset 6px 8px 8px #4d4d4d,
     inset -8px -8px 8px 2px rgba(119, 119, 119, 0.486);

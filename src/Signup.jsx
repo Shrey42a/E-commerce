@@ -4,6 +4,8 @@ import { withFormik } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
 import axios from "axios";
+import withUser from "./withUser";
+import withAlert from "./withAlert";
 
 
 function callSignupApi(values, bag) {
@@ -13,13 +15,13 @@ function callSignupApi(values, bag) {
         localStorage.setItem("token", token);
         console.log(bag);
         bag.props.setUser(user);
+        bag.props.setAlert({type: "success", message: "Welcome you'd login successfully " + values.name + "  " + values.email + "  " +  values.password});
       })
       .catch(() => {
         bag.props.setAlert({type: "warning", message: "Something went wrong"})
       });
-  }
-
-
+}
+  
   const schema = Yup.object().shape({
     name: Yup.string().required(),
     email: Yup.string().email().required(),
@@ -30,8 +32,6 @@ function callSignupApi(values, bag) {
       .min(6)
       .max(14)
   });
-
-  
   const initialValues = {
     email: "",
     password: "",
@@ -153,7 +153,6 @@ export function Signup({ handleSubmit, values, errors, touched, handleChange, ha
   );
 }
 
-const myHoc = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: callSignupApi });
+const EasySignup = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: callSignupApi })(Signup);
 
-const EasySignup = myHoc(Signup);
-export default EasySignup;
+export default withAlert(withUser(EasySignup));

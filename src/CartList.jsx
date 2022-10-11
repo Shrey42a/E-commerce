@@ -82,9 +82,9 @@ function CartList({ cart, updateCart, product }) {
               </div>
             </div>
             <div className="p-3">
-              <button className="w-full px-4 py-2 mt-2 text-white bg-red-500 border rounded-sm shadow-xl lg:mt-0">
+              <Link to="/checkout"><button className="w-full px-4 py-2 mt-2 text-white bg-red-500 border rounded-sm shadow-xl lg:mt-0">
                 Proceed to checkoutt
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>
