@@ -19,6 +19,7 @@ import Loggeduser from "./Loggeduser";
 import Authuser from "./Authuser";
 import Alerts from "./Alerts";
 import { AlertContext, UserContext } from "./Contexts";
+import Checkout from "./Checkout";
 
 
 function App() {
@@ -98,6 +99,7 @@ function App() {
             <Route path="/signup" element={<Authuser><Signup /></Authuser>}></Route>
             <Route path="/page" element={<Loggeduser><Page /></Loggeduser>}></Route>
             <Route path="/about" element={<Loggeduser><About /></Loggeduser>}></Route>
+            <Route path="/checkout" element={<Loggeduser><Checkout /></Loggeduser>}></Route>
             <Route path="/contact" element={<Loggeduser><Contact /></Loggeduser>}></Route>
             <Route path="/forget" element={<Authuser><Forget /></Authuser>}></Route>
             <Route path="/cart" element={<Loggeduser><CartPage cart={cart} updateCart={updateCart} /></Loggeduser>}></Route>

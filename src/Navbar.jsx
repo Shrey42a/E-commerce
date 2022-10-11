@@ -12,12 +12,12 @@ function Navbar({ productCount, setUser, user }) {
   return (
     <>
       <div>
-        <nav className="navbar gradient">
+        <nav className="navbar bg42">
           <div className="flex flex-col-rev">
             <div>
               <img
                 alt="..."
-                src="https://media.discordapp.net/attachments/933654325127938101/1025607932768960613/Logo4.png?width=789&height=492"
+                src="https://cdn.discordapp.com/attachments/933654325127938101/1028275924665380914/Sat_8_10_2022_17_30_27.png"
                 className="w-40 h-24 scale-125 border-transparent rounded-full hover:scale-150"
               ></img>
             </div>
@@ -55,7 +55,7 @@ function Navbar({ productCount, setUser, user }) {
                     <h1>Cart</h1>
                   </Link>}
                 </li>
-                <li>{user && <button className="p-1 shadow-sm text-black rounded-lg bg10 shadow-zinc-400" onClick={handleLogout}>Logout</button>}</li>
+                <li>{user && <button className="p-1 text-black rounded-lg shadow-sm bg10 shadow-zinc-400" onClick={handleLogout}>Logout</button>}</li>
               </ul>
               <Link to="/cart"><div className="flex">
                 

@@ -23,6 +23,8 @@ function TeamCard({
             <h1 className="text-lg font-bold text-center">Sale!</h1>
           </div>
         </div>
+        <div className="flex items-center justify-between">
+        <div>
         <h3 className="ml-2 text-sm text-slate-600">{category}</h3>
         <h1 className="ml-2 text-2xl font-bold text-red-500 truncate">
           {title}
@@ -42,11 +44,13 @@ function TeamCard({
               </h1>
             </div>
           </div>
-          <div className="flex">
-            <button className="w-16 h-10 p-2 mr-6 text-lg font-semibold text-center rounded-lg shadow-lg shadow-zinc-600 text-slate-600 hover:bg-lime-500 bg-lime-400">
+          </div>
+          <div className="flex items-baseline mt-20 mr-8">
+            <button className="w-16 h-10 p-2 text-lg font-semibold text-center rounded-lg shadow-lg shadow-zinc-600 text-slate-600 hover:bg-lime-500 bg-lime-400">
               Buy
             </button>
-        </div>
+          </div>
+          </div>
       </div>
     </Link>
   );
