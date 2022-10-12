@@ -45,11 +45,7 @@ function TeamCard({
             </div>
           </div>
           </div>
-          <div className="flex items-baseline mt-20 mr-8">
-            <button className="w-16 h-10 p-2 text-lg font-semibold text-center rounded-lg shadow-lg shadow-zinc-600 text-slate-600 hover:bg-lime-500 bg-lime-400">
-              Buy
-            </button>
-          </div>
+          
           </div>
       </div>
     </Link>

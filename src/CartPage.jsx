@@ -33,7 +33,7 @@ function CartPage({ cart, updateCart }) {
     <> 
       
       <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-12 bg-fixed h-max top-60 bg12">
-        <div className="p-2 m-4 space-y-4 lg:max-w-7xl lg:p-12">
+        <div className="p-2 m-4 lg:max-w-7xl lg:p-12">
            <CartList cart={cart} product={product} updateCart={updateCart} />
         </div>
       </div>

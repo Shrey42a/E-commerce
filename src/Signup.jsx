@@ -39,7 +39,7 @@ function callSignupApi(values, bag) {
     name: "",
     confirmPassword: "",
   }
-export function Signup({ handleSubmit, values, errors, touched, handleChange, handleBlur }) {
+export function Signup({ handleSubmit, values, isValid, errors, touched, handleChange, handleBlur }) {
 
   return (
     <>
@@ -124,6 +124,7 @@ export function Signup({ handleSubmit, values, errors, touched, handleChange, ha
               <div className="flex space-x-2">
                 <button
                   type="submit"
+                  disabled={!isValid}
                   className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:bg-red-400 disabled:cursor-not-allowed"
                 >
                   Sign Up
@@ -153,6 +154,6 @@ export function Signup({ handleSubmit, values, errors, touched, handleChange, ha
   );
 }
 
-const EasySignup = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: callSignupApi })(Signup);
+const EasySignup = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: callSignupApi, validateOnMount: true })(Signup);
 
 export default withAlert(withUser(EasySignup));

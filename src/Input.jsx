@@ -21,7 +21,7 @@ function Input({ name, label, id, className, ...rest }) {
         <div>
               <div className="flex flex-col">
                 <div className="flex space-x-1">
-                  <label htmlFor={id} className="">
+                  <label htmlFor={id} className="text-neutral-500">
                     {label}
                   </label>
                   <h1 className="text-red-500">*</h1>
