@@ -34,7 +34,7 @@ function calloginApi(values, bag) {
       password: "",
 }
 
-export function Login({ handleSubmit, values, errors, handleChange, handleBlur }) {
+export function Login({ handleSubmit, values, errors, isValid, handleChange, handleBlur }) {
   return (
     <>
       <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient"> 
@@ -79,7 +79,7 @@ export function Login({ handleSubmit, values, errors, handleChange, handleBlur }
               <div className="flex space-x-2">
                 <button
                   type="submit"
-                  
+                  disabled={!isValid}
                   className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm disabled:bg-gray-400 shadow-zinc-900 hover:bg-green-600 disabled:cursor-not-allowed"
                 >
                   Login
@@ -109,7 +109,7 @@ export function Login({ handleSubmit, values, errors, handleChange, handleBlur }
     </>
   );
 }
-const FormikLogin = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: calloginApi })(Login);
+const FormikLogin = withFormik({ validationSchema: schema, initialValues: initialValues, handleSubmit: calloginApi, validateOnMount: true })(Login);
 
 export default withAlert(withUser(FormikLogin));
 

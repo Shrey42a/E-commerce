@@ -37,7 +37,7 @@ function CartList({ cart, updateCart, product }) {
 
   return (
     <>  
-      <div className="justify-around hidden p-5 text-xl font-bold text-gray-700 border border-t shadow-md shadow-zinc-700 lg:grid lg:grid-cols-6 bg-slate-200">
+      <div className="justify-around hidden p-5 text-xl font-bold text-gray-700 bg-transparent border lg:grid lg:grid-cols-6">
           <div></div>
           <div className=""></div>
           <div className="-ml-28">Product</div>
@@ -52,24 +52,24 @@ function CartList({ cart, updateCart, product }) {
             <CartRow onRemove={handleRemove} product={product} onChange={handleChange} quantity={localCart[item.id]} {...item} ></CartRow>
       );
           })}
-
       
-      <div className="flex flex-col justify-between p-2 border-b border-l border-gray-200 shadow-md shadow-zinc-700 lg:flex-row bg-slate-100">
-          <div className="flex justify-start space-x-4 overflow-hidden">
+      <div className="flex flex-col justify-between px-3 bg-transparent lg:flex-row">
+          <div className="flex items-center justify-start w-full space-x-2 overflow-hidden">
             <input
               placeholder="Coupon code"
-              className="w-1/5 px-2 border border-gray-500 shadow-md shadow-zinc-700 -py-2"
+              className="w-1/2 h-10 p-1 border lg:w-1/3"
             />
-            <button className="p-2 m-1 text-white border shadow-md bg-lime-400 shadow-zinc-700">
+            <button className="h-10 p-2 m-1 text-white border shadow b23">
               Apply coupon
             </button>
-          </div>
-          <button onClick={updateMyCart} className="px-2 py-2 mt-2 text-gray-400 bg-red-500 border shadow-md lg:mt-0">
+        </div>
+        <div className="flex items-center justify-end w-full">
+          <button onClick={updateMyCart} className="w-full h-10 px-2 mt-2 font-bold text-white border shadow lg:w-1/4 b23 lg:mt-0">
             Update cart
-          </button>
+          </button></div>
       </div>
       <div className="flex justify-end">
-          <div className="w-full m-4 font-semibold border shadow-md shadow-zinc-700 md:w-3/5 lg:w-2/5">
+          <div className="w-full m-4 font-semibold border lg:w-1/3">
             <h1 className="p-2 border-b">Cart totals</h1>
             <div className="p-4">
               <div className="flex justify-between p-2 border-b">
@@ -82,7 +82,7 @@ function CartList({ cart, updateCart, product }) {
               </div>
             </div>
             <div className="p-3">
-              <Link to="/checkout"><button className="w-full px-4 py-2 mt-2 text-white bg-red-500 border rounded-sm shadow-xl lg:mt-0">
+              <Link to="/checkout"><button className="w-full px-1 py-2 mt-2 text-sm text-white border rounded-sm shadow b23 lg:text-lg lg:mt-0">
                 Proceed to checkoutt
               </button></Link>
             </div>

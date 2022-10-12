@@ -11,7 +11,7 @@ function Checkout() {
   <div class="lg:w-2/3 h-max lg:h-4/5 p-2">
   <div class="p-1 border border-gray-300">
     <h1 class="font-bold text-xl mb-4">Billing details</h1>
-    <div class="flex flex-col items-center space-y-2">
+    <form class="flex flex-col items-center space-y-2">
 
       <div class="w-full flex space-x-2 lg:justify-center justify-between">
         <div class="flex flex-col">
@@ -63,7 +63,7 @@ function Checkout() {
        <label class="mr-48">Email</label>
        <input class="w-4/5 border border-gray-400 p-2" placeholder="Email"></input>
       </div>
-    </div>
+    </form>
     <h1 class="text-lg  text-start font-bold m-4">Additional information</h1>
     <div class="flex lg:ml-32 lg:items-start items-center flex-col">
     <textarea class="border-gray-400 border mb-3 w-4/5"></textarea></div>
@@ -98,7 +98,7 @@ function Checkout() {
       <p class="w-4/5">There is another para where you casn finf hsdbfghjsbfjwhgfwrgh</p></div>
     </div>
     <div class="flex justify-center">
-    <button class="p-3 w-full mt-2 rounded-md text-white text-lg font-semibold bg-red-600">Place Order</button></div>
+    <button class="p-3 w-full mt-2 rounded-md text-white text-lg font-semibold b23">Place Order</button></div>
   </div>
   </div>
   </div>
