@@ -17,8 +17,8 @@ function Navbar({ productCount, setUser, user }) {
             <div>
               <img
                 alt="..."
-                src="https://cdn.discordapp.com/attachments/933654325127938101/1028275924665380914/Sat_8_10_2022_17_30_27.png"
-                className="w-40 h-24 scale-125 border-transparent rounded-full hover:scale-150"
+                src="https://media.discordapp.net/attachments/933654325127938101/1029717959393943632/IMG_20221012_165911-removebg-preview.png"
+                className="w-28 h-20 scale-125 border-transparent rounded-full hover:scale-150"
               ></img>
             </div>
             <div className="container navbar-container">

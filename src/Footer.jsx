@@ -9,7 +9,7 @@ function Footer() {
                 <div className="flex flex-row">
                     <div className="col-lg-4 col-md-6 col-sm-12 footer-column">
                         <div className="logo-widget footer-widget">
-                            <figure className="h-40 logo-box w-60"><a><img src="https://media.discordapp.net/attachments/933654325127938101/1025607932768960613/Logo4.png?width=789&height=492" alt="..." /></a></figure>
+                            <figure className="h-40 mb-12 logo-box w-60"><a><img src="https://media.discordapp.net/attachments/933654325127938101/1029717959393943632/IMG_20221012_165911-removebg-preview.png" alt="..." /></a></figure>
                             <div className="text">
                                 <p>This website provides you a better quality of products, here you an buy any kind of product. This is @42Shopping the better ecommerce website near you....!</p>
                             </div>
