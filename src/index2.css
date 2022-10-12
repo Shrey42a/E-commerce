@@ -421,7 +421,7 @@ h1.text {
 }
 .footer-content .logo-widget{
   position: relative;
-  margin-top: -5px;
+  margin-top: -40px;
 }
 .footer-content .logo-widget .footer-social li{
   position: relative;
@@ -447,7 +447,7 @@ h1.text {
   background: #ff5e14;
 }
 .footer-content .logo-widget .logo-box{
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 .footer-content .logo-widget .text p{
   color: #9ea0a9;
