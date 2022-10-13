@@ -3,22 +3,21 @@ import { Link } from "react-router-dom";
 import CartRow from "./CartRow";
 import EmptyCart from "./EmptyCart";
 
-function CartList({ cart, updateCart, product }) {
+function CartList({ cart, updateCart, product}) {
 
   const [localCart, setLocalCart] = useState(cart);
+
   useEffect(function () {
     setLocalCart(cart);
   }, [cart]);
 
   function handleRemove(productId) {
-    console.log("crosss button called", productId);
- 
     const newCart = {...cart}
     delete newCart[productId]
     updateCart(newCart);
   }
 
-  function handleChange(productId, newValue ) {
+  function handleChange(productId, newValue) {
     const newLocalcart = { ...localCart, [productId]: newValue };
     setLocalCart(newLocalcart);
   }
@@ -46,10 +45,9 @@ function CartList({ cart, updateCart, product }) {
           <div className="flex ml-2 grow">Total</div>
       </div>
 
-
-      {product.map(function (item) {
+      {product.length > 0 && product.map(function (items){
         return (
-            <CartRow onRemove={handleRemove} product={product} onChange={handleChange} quantity={localCart[item.id]} {...item} ></CartRow>
+            <CartRow key={items.id} onRemove={handleRemove} onChange={handleChange} quantity={localCart[items.id]} product={product} {...items} ></CartRow>
       );
           })}
       

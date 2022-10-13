@@ -3,54 +3,61 @@ import ProductList from "./ProductList";
 import { getProductListm } from "./Api";
 import Nothing from "./Nothing";
 import Social from "./Social";
+import { range } from "lodash";
+import { useSearchParams, Link } from "react-router-dom";
 
 function Page() {
-  const [productList, setProductList] = useState([]);
-  const [query, setQuery] = useState("");
-  const [sort, setSort] = useState("default");
+  const [productData, setProductData] = useState();
+  const [loading, setLoading] = useState(true);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchparams = Object.fromEntries([...searchParams]);
+  let { query, sort, page } = searchparams;
+
+   page = +page || 1;
+   query = query || "";
+   sort = sort || "default";
 
   useEffect(function () {
-    const t = getProductListm();
+    let sortType;
+    let sortBy;
 
-    t.then(function (ddata) {
-      setProductList(ddata.data.products);
-    });
-  }, []);
+    if (sort == "name") {
+      sortBy = "title";
+    } else if (sort == "price") {
+      sortBy = "price";
+    } else if (sort == "price2") {
+      sortBy = "price";
+      sortType = "desc";
+    }
 
-  let data = productList.filter(function (item) {
-    return item.title.toLowerCase().indexOf(query.toLowerCase()) != -1;
-  });
-
-  if (sort == "price") {
-    data = data.sort(function (x, y) {
-      return x.price - y.price;
+    getProductListm(sortBy, query, page, sortType).then(function (Wdata) {
+      setProductData(Wdata);
+      console.log("data");
+      setLoading(false);
     });
-  } else if (sort == "name") {
-    data = data.sort(function (x, y) {
-      return x.title < y.title ? -1 : 1;
-    });
-  } else if (sort == "price2") {
-    data = data.sort(function (x, y) {
-      return y.price - x.price;
-    });
-  } else if (sort == "rating") {
-    data = data.sort(function (x, y) {
-      return y.rating - x.rating;
-    });
-  } else if (sort == "discountPercentage") {
-    data = data.sort(function (x, y) {
-      return y.discountPercentage - x.discountPercentage;
-    });
-  }
+  }, [sort, query, page]);
 
   function handleChange(event) {
-    setQuery(event.target.value);
+    setSearchParams({ ...searchparams, query: event.target.value, page: 1 },
+    {replace: false});
   }
 
   function handleSortChange(event) {
-    setSort(event.target.value);
+    setSearchParams({ ...searchparams, sort: event.target.value },
+    {replace: false});
   }
 
+  if (loading) {
+    return (
+      <>
+        <div className="flex items-center justify-center h-screen p-4 grow bg-slate-200">
+          <div className="loader2"></div>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div className="flex justify-center p-2 gradient2">
@@ -79,15 +86,6 @@ function Page() {
               <option value="name" className="text-sm font-semibold">
                 Sort by name
               </option>
-              <option value="rating" className="text-sm font-semibold">
-                Sort by rating
-              </option>
-              <option
-                value="discountPercentage"
-                className="text-sm font-semibold"
-              >
-                Sort by discount
-              </option>
               <option value="price" className="text-sm font-semibold">
                 Sort by price: Low to High
               </option>
@@ -97,14 +95,12 @@ function Page() {
             </select>
           </div>
 
-          {data.length > 0 && <ProductList products={data} />}
-          {data.length == 0 && <Nothing></Nothing>}
+          {productData.data.length > 0 && <ProductList products={productData.data} />}
+          {productData.data.length == 0 && <Nothing></Nothing>}
 
-          <div className="flex items-center mt-4 space-x-2 text-xl">
-            <button className="font-bold button">1</button>
-            <button className="font-bold button">2</button>
-            <button className="font-bold button">3</button>
-          </div>
+          {range(1, productData.meta.last_page + 1).map((Pgnum) => (
+            <Link key={Pgnum} to={"?" + new URLSearchParams({ ...searchparams, page: Pgnum })}><button className={"font-bold mx-2 button " + (Pgnum == page ? "bg-lime-400": "bg-teal-500")}>{Pgnum}</button></Link>
+          ))};
 
           <div className="flex items-center justify-center p-2 mt-4 mb-2">
             <Social />
