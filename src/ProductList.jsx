@@ -7,9 +7,7 @@ function ProductList({ products }) {
       <div className="flex flex-wrap justify-center p-2 mt-8 overflow-hidden">
         {products.map(function (item) {
           return (
-            <>
-              <TeamCard key={item.price} {...item}></TeamCard>
-            </>
+              <TeamCard key={item.id} {...item}></TeamCard>
           );
         })}
       </div>
