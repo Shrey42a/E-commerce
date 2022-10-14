@@ -20,7 +20,6 @@ import Checkout from "./Checkout";
 import UserProvider from "./Providers/UserProvider";
 import AlertProvider from "./Providers/AlertProvider";
 
-
 function App() {
   const savedDataString = localStorage.getItem("My-cart") || "{}";
   const savedData = JSON.parse(savedDataString);
@@ -30,15 +29,12 @@ function App() {
     const oldCount = cart[productId] || 0;
     const newCart = { ...cart, [productId]: oldCount + count };
     updateCart(newCart);
-
   }
-
     function updateCart(newCart) {
       setCart(newCart);  
     const cartString = JSON.stringify(newCart);
     localStorage.setItem("My-cart", cartString);
     }
-    
   const totalCount = Object.keys(cart).reduce(function (output, current) {
     return output + cart[current];
   }, 0);

@@ -3,7 +3,7 @@ import React from "react";
 function Checkout() {
     return (
         <>
-        <div class="h-max lg:px12 lg:px-20 py-24">
+        <div class="h-max gradient4 lg:px12 lg:px-20 py-24">
   <div class="border-b-4 border-red-600 mb-2 p-4">
     <h1 class="text-2xl font-semibold">Checkout</h1>
   </div>

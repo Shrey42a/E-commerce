@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
 import ProductList from "./ProductList";
 import { getProductListm } from "./Api";
-import Nothing from "./Nothing";
 import Social from "./Social";
 import { range } from "lodash";
 import { useSearchParams, Link } from "react-router-dom";
+import NewLoading from "./NewLoading";
+import Nothing from "./Nothing";
 
 function Page() {
   const [productData, setProductData] = useState();
   const [loading, setLoading] = useState(true);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
   const searchparams = Object.fromEntries([...searchParams]);
-  let { query, sort, page } = searchparams;
 
-   page = +page || 1;
+  let { query, sort, page } = searchparams;
+  page = +page || 1;
    query = query || "";
    sort = sort || "default";
 
   useEffect(function () {
     let sortType;
     let sortBy;
-
     if (sort == "name") {
       sortBy = "title";
     } else if (sort == "price") {
@@ -31,7 +29,6 @@ function Page() {
       sortBy = "price";
       sortType = "desc";
     }
-
     getProductListm(sortBy, query, page, sortType).then(function (Wdata) {
       setProductData(Wdata);
       console.log("data");
@@ -48,20 +45,17 @@ function Page() {
     setSearchParams({ ...searchparams, sort: event.target.value },
     {replace: false});
   }
-
   if (loading) {
     return (
       <>
-        <div className="flex items-center justify-center h-screen p-4 grow bg-slate-200">
-          <div className="loader2"></div>
-        </div>
+        <NewLoading />
       </>
     );
   }
   return (
     <>
-      <div className="flex justify-center p-2 gradient2">
-        <div className="w-full p-6 mt-6 mb-4 shadow-md bg-fixed bg12 shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
+      <div className="flex justify-center p-2 gradient4">
+        <div className="w-full p-6 mt-6 mb-4 bg-transparent shadow-md shadow-zinc-600 max-w-min lg:max-w-7xl sm:max-w-md md:max-w-3xl">
           <h1 className="-mb-8 text-3xl font-bold text-center sm:text-left md:text-left lg:text-center text-slate-700">
             @42Shopping
           </h1>
@@ -99,9 +93,8 @@ function Page() {
           {productData.data.length == 0 && <Nothing></Nothing>}
 
           {range(1, productData.meta.last_page + 1).map((Pgnum) => (
-            <Link key={Pgnum} to={"?" + new URLSearchParams({ ...searchparams, page: Pgnum })}><button className={"font-bold mx-2 button " + (Pgnum == page ? "bg-lime-400": "bg-teal-500")}>{Pgnum}</button></Link>
+            <Link key={Pgnum} to={"?" + new URLSearchParams({ ...searchparams, page: Pgnum })}><button className={"font-bold mx-2 button3 " + (Pgnum == page ? "bg-[#ff5151]": "bg-teal-500")}>{Pgnum}</button></Link>
           ))};
-
           <div className="flex items-center justify-center p-2 mt-4 mb-2">
             <Social />
           </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CartList from "./CartList";
 import { getProductData } from "./Api";
+import NewLoading from "./NewLoading";
 
 function CartPage({ cart, updateCart }) {
   const [loading, setLoading] = useState(true);
@@ -22,15 +23,13 @@ function CartPage({ cart, updateCart }) {
   if (loading) {
     return (
       <>
-        <div className="flex items-center justify-center h-screen p-4 grow bg-slate-200">
-          <div className="loader2"></div>
-        </div>
+        <NewLoading />
       </>
     );
   }
   return (
     <> 
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-12 bg-fixed h-max top-60 bg12">
+      <div className="flex flex-col items-center justify-center min-h-screen p-4 pt-12 bg-fixed h-max top-60 gradient4">
         <div className="p-2 m-4 lg:max-w-7xl lg:p-12">
            <CartList cart={cart} product={product} updateCart={updateCart} />
         </div>

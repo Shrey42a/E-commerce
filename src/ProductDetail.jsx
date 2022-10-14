@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getProductData } from "./Api";
 import Social from "./Social";
 import Error2 from "./Error2"
+import NewLoading from "./NewLoading";
 
 function ProductDetail({ onAddToCart }) {
   const id = +useParams().id;
@@ -36,16 +37,14 @@ function ProductDetail({ onAddToCart }) {
   if (loading) {
     return (
       <>
-        <div className="flex items-center justify-center h-screen p-4 grow bg-slate-200">
-          <div className="loader2"></div>
-        </div>
+        <NewLoading />
       </>
     );
   }
 
   return (
     <>
-      <div className="flex flex-col justify-center bg-fixed bg12 lg:h-screen">
+      <div className="flex flex-col justify-center bg-fixed gradient4 lg:h-screen">
         <div className="flex justify-center p-4">
           <div className="flex flex-col p-2 shadow-sm bg10 shadow-zinc-700 h-max lg:flex-row md:flex-row lg:w-3/4">
             <div className="flex w-full p-4 h-3/5 lg:w-1/2">
@@ -87,16 +86,16 @@ function ProductDetail({ onAddToCart }) {
                   onChange={handleCountChange}
                   value={count}
                   type="number"
-                  className="w-12 px-2 text-2xl text-center rounded-full shadow-md shadow-zinc-600 bg-slate-200"
+                  className="w-12 px-2 text-2xl text-center rounded-full shadow-sm shadow-zinc-600 bg-slate-200"
                 ></input>
-                <button data-mdb-ripple="true" data-mdb-ripple-color="light" data-mdb-ripple-duration="1000ms" onClick={handleButtonClick} className="shadow-sm shadow-zinc-600 btnn">
+                <button data-mdb-ripple="true" data-mdb-ripple-color="light" data-mdb-ripple-duration="1000ms" onClick={handleButtonClick} className="shadow-sm shadow-zinc-600 button3">
                   Add to cart
                 </button>
               </div>
               <div className="flex items-center mt-2 space-x-4">
-                <button className="shadow-sm btnn shadow-zinc-600">Buy Now</button>
+                <button className="shadow-sm button3 shadow-zinc-600">Buy Now</button>
                 <Link title="Products" to="/page">
-                  <button className="p-2 px-3 py-1 text-lg font-semibold text-white rounded-lg shadow-sm bg-lime-500 hover:bg-lime-600 shadow-zinc-700 outline-0">
+                  <button className="p-2 px-3 py-1 text-lg font-semibold text-white bg-gray-400 rounded-lg shadow-sm button3 shadow-zinc-700 hover:bg-gray-600 outline-0">
                     Back
                   </button>
                 </Link>
@@ -107,7 +106,7 @@ function ProductDetail({ onAddToCart }) {
         <div className="flex items-center justify-around p-2 mt-2 space-x-2">
           {id > 1 && (
             <Link title="Prev" to={"/productdetail/" + (id - 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm bg9 hover:bg10 shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm button3 outline-0 shadow-zinc-700">
                 Prev
               </button>
             </Link>
@@ -117,7 +116,7 @@ function ProductDetail({ onAddToCart }) {
 
           {id < 100 && (
             <Link title="Next" to={"/productdetail/" + (id + 1)}>
-              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm hover:bg10 bg9 text-md shadow-zinc-700 outline-0">
+              <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm outline-0 button3 text-md shadow-zinc-700">
                 Next
               </button>
             </Link>

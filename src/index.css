@@ -2,33 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/*---------Main page card------*/
+
 .container {
   width: 300px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 .container .card .face {
   width: 300px;
   height: 200px;
   transition: 0.8s;
   border-radius: 5%;
 }
-.bg13 {
- position: relative;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  z-index: 10;
-  transform: translateY(100px);
-}
-.bg13:hover {
-  transform: translateY(0);
-  box-shadow: 0px 0 40px #000000, 5px 25px 20px #222525;
-}
-
 .container .card .face.face1 {
   position: relative;
   display: flex;
@@ -38,28 +26,23 @@
   z-index: 10;
   transform: translateY(100px);
 }
-
 .container .card:hover .face.face1 {
   transform: translateY(0);
   box-shadow: 0px 0 40px #000000, 5px 25px 20px #222525;
 }
-
 .container .card .face.face1 .content {
   opacity: 0.1;
   transition: 0.5s;
   text-align: center;
 }
-
 .container .card:hover .face.face1 .content {
   opacity: 1;
 }
-
 .container .card .face.face1 .content h3 {
   font-size: 4em;
   color: #424242;
   text-align: center;
 }
-
 .container .card .face.face2 {
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -68,9 +51,7 @@
   background-color: rgba(255, 255, 255, 0);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
-
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.25);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,42 +59,14 @@
   box-sizing: border-box;
   transform: translateY(-100px);
 }
-.glass2 {
-  backdrop-filter: blur(1px) saturate(94%);
-  -webkit-backdrop-filter: blur(2px) saturate(94%);
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
-}
-.bg9 {
-  backdrop-filter: blur(2px) saturate(100%);
-  -webkit-backdrop-filter: blur(2px) saturate(100%);
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
-}
-.bg10 {
-  backdrop-filter: blur(5px) saturate(94%);
-  -webkit-backdrop-filter: blur(9px) saturate(94%);
-  background-color: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  border: 1px solid rgba(240, 235, 235, 0.3);
-}
-.bg11 {
-  background: linear-gradient(#f09819 #edde5d);
-  background-color: linear-gradient(#f09819 #edde5d);
-}
-
 .container .card:hover .face.face2 {
   transform: translateY(0);
 }
-
 .container .card .face.face2 .content p,
 a {
   font-size: 20pt;
   color: #ffffff;
 }
-
 .container .card .face.face2 .content a {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.4);
@@ -125,13 +78,44 @@ a {
   margin: 15px 0 0;
   display: inline-block;
 }
-
 .container .card .face.face2 .content a:hover {
   background: #00f0ec;
   color: #ffffff;
   box-shadow: 1px 1px 0, 2px 2px 0, 3px 3px 0, 4px 4px 0, 5px 5px 0, 6px 6px 0;
 }
+/*--------Main page card end------*/
 
+/*----Main page (Card) BG------*/
+.glass2 {
+  backdrop-filter: blur(1px) saturate(94%);
+  -webkit-backdrop-filter: blur(2px) saturate(94%);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+/*----Main page (Card) BG, END------*/
+
+/*-----Next/Prev button BG-----*/
+.bg9 {
+  backdrop-filter: blur(2px) saturate(100%);
+  -webkit-backdrop-filter: blur(2px) saturate(100%);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+/*-----Next/Prev button BG, END-----*/
+
+/*------BG of About(card),Contact(card),Error404(All),Forget(Card),Login(form),Navbar(bg),Productdetail(bg),Signup(form),ProductRow(bg)--------*/
+.bg10 {
+  backdrop-filter: blur(5px) saturate(94%);
+  -webkit-backdrop-filter: blur(9px) saturate(94%);
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  border: 1px solid rgba(240, 235, 235, 0.3);
+}
+/*------BG of About(card),Contact(card),Error404(All),Forget(Card),Login(form),Navbar(bg),Productdetail(bg),Signup(form),ProductRow(bg)--------End*/
+
+/*------social card-------*/
 .btn_wrap {
   position: relative;
   display: flex;
@@ -146,7 +130,6 @@ a {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 span {
   position: absolute;
   z-index: 99;
@@ -162,7 +145,6 @@ span {
   -webkit-transition: all 1.2s ease;
   transition: all 1.8s ease;
 }
-
 .container2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,84 +168,9 @@ span {
   transition-delay: 0.15s;
   transform: translateX(-280px);
 }
+/*-----------social card end---------*/
 
-.ring {
-  width: 150px;
-  height: 150px;
-  box-shadow: 20px 10px 10px #363636;
-  background: transparent;
-  border: 1px solid #3c3c3c;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 150px;
-  font-family: sans-serif;
-  font-size: 20px;
-  color: #00db25;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px #494646;
-}
-.ring:before {
-  border: 3px solid transparent;
-  border-top: 3px solid #2eff35;
-  border-right: 3px solid #1ef901;
-  border-radius: 55%;
-  animation: animateC 1s linear infinite;
-}
-.ring span {
-  top: calc(10%);
-  left: 0%;
-  top: 33%;
-  width: 10%;
-  height: 8px;
-  background: transparent;
-  animation: animate 1s linear infinite;
-}
-.ring span:before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 40%;
-  background: #fff000;
-  top: -6px;
-  right: -5px;
-  box-shadow: 20 0 20px #fff000;
-}
-@keyframes animateC {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate {
-  0% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(405deg);
-  }
-}
-/*bg gradint */
-.bg20 {
-  background: linear-gradient(-45deg, #ee7752, #df7fa4, #9581f4,#23a6d5, #a4a5a5);
-  animation: gradient 20s ease infinite;
-  background-size: 400% 400%;
-}
-@keyframes gradient {
-0% {
-  background-position: 0% 50%;
-}
-50% {
-  background-position: 50% 100%;
-}
-100% {
-  background-position: 100% 0%;
-}
-}
-
+/* -----Main Loader---- */
 .loader-04 {
   border: 2px solid #00db07;
   border-radius: 50%;
@@ -283,7 +190,6 @@ span {
   border: 0.8em solid currentcolor;
   border-radius: 50%;
 }
-
 @keyframes loader-04 {
   0% {
     transform: rotate(0deg);
@@ -301,14 +207,11 @@ span {
   vertical-align: middle;
   pointer-events: none;
 }
+/* -----Main Loader End---- */
 
-/* about */
-
+/* -------Product page BG------- */
 .bg12
 {
   background:url('https://s-media-cache-ak0.pinimg.com/736x/f4/ac/6a/f4ac6aac3afb587f6cae04155656fca3.jpg');
 }
-.bg5
-{
-  background:url('https://images.wallpaperscraft.com/image/single/lamp_wall_brick_137605_3840x2400.jpg');
-}
+/* -------Product page BG-------End*/

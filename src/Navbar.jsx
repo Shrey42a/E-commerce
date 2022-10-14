@@ -12,13 +12,13 @@ function Navbar({ productCount, setUser, user }) {
   return (
     <>
       <div>
-        <nav className="navbar bg42">
+        <nav className="bg49 navbar">
           <div className="flex flex-col-rev">
             <div>
               <img
                 alt="..."
                 src="https://media.discordapp.net/attachments/933654325127938101/1029717959393943632/IMG_20221012_165911-removebg-preview.png"
-                className="w-28 h-20 scale-125 border-transparent rounded-full hover:scale-150"
+                className="h-20 scale-125 border-transparent rounded-full w-28 hover:scale-150"
               ></img>
             </div>
             <div className="container navbar-container">
@@ -29,33 +29,34 @@ function Navbar({ productCount, setUser, user }) {
                 <span className="line line3"></span>
                 <span className="line line4"></span>
               </div>
-              <ul className="menu-items">
+              <ul className="-mt-6 menu-items">
+                <li><img className="w-16 h-16 lg:hidden" src="https://media.discordapp.net/attachments/933654325127938101/1029717959393943632/IMG_20221012_165911-removebg-preview.png"></img></li>
                 {user && <li>
                   <Link to="/page">
-                    <h1>Home</h1>
+                    <button className="h-8 p-1 -mt-4 text-black rounded-lg button3 bg10">Home</button>
                   </Link>
                 </li>}
                 {user && <li>
                    <Link to="/about">
-                    <h1>About</h1>
+                    <button className="h-8 p-1 -mt-4 text-black rounded-lg button3 bg10">About</button>
                   </Link>
                 </li>}
                 {!user && <li>
                   <Link to="/login">
-                    <h1>login</h1>
+                    <button className="h-8 p-1 -mt-4 text-black rounded-lg button3 bg10">Login</button>
                   </Link>
                 </li>}
                 {user && <li>
                   <Link to="/contact">
-                    <h1>Contact</h1>
+                   <button className="h-8 p-1 -mt-4 text-black rounded-lg button3 bg10">Contact</button>
                   </Link>
                 </li> }
                 <li>
                   {user && <Link to="/cart">
-                    <h1>Cart</h1>
+                    <button className="h-8 p-1 -mt-4 text-black rounded-lg button3 bg10">Cart</button>
                   </Link>}
                 </li>
-                <li>{user && <button className="p-1 text-black rounded-lg shadow-sm bg10 shadow-zinc-400" onClick={handleLogout}>Logout</button>}</li>
+                <li>{user && <button className="h-8 p-1 text-black rounded-lg button3 bg10" onClick={handleLogout}>Logout</button>}</li>
               </ul>
               <Link to="/cart"><div className="flex">
                 
