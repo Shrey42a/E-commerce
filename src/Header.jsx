@@ -4,7 +4,7 @@ function Header() {
   return (
     <>
       <div>
-        <section className="bgimage" id="home">
+        <section className="h-20 bgimage" id="home">
           <div className="container-fluid"></div>
         </section>
       </div>
