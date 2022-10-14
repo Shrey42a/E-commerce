@@ -20,7 +20,7 @@ function callContactApi(values) {
 function Contact({handleSubmit, handleBlur, isValid, values, touched, handleChange, errors}) {
     return (
         <>
-           <div name="contact" className="flex items-center justify-center w-full h-screen p-4 bg-center bg25">
+           <div name="contact" className="flex items-center justify-center w-full h-screen p-4 bg-center gradient4">
              <form onSubmit={handleSubmit} className="flex flex-col max-w-[600px] bg10 p-4 w-full">
               <div className="pb-8">
                 <p className="inline text-4xl font-bold text-gray-400 border-b-4 border-pink-600">Contact</p>
@@ -52,7 +52,7 @@ function Contact({handleSubmit, handleBlur, isValid, values, touched, handleChan
                 placeholder="Put your email" />
             <textarea className="p-2 mt-2 bg-transparent border border-black" name="message" rows="10" placeholder="Message"></textarea>
             <div className="flex items-center justify-center mt-2">
-                <button disabled={!isValid} className="w-full text-center disabled:cursor-not-allowed lg:w-1/2 btn42">Let's Collaborate</button></div>
+                <button disabled={!isValid} className="w-full text-center disabled:cursor-not-allowed lg:w-1/2 button3">Join</button></div>
              </form>
             </div>
         </>

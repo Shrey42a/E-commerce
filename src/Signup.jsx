@@ -43,7 +43,7 @@ export function Signup({ handleSubmit, values, isValid, errors, touched, handleC
 
   return (
     <>
-      <div className="flex items-center justify-center px-2 py-8 h-4/5 gradient">
+      <div className="flex items-center justify-center px-2 py-8 h-4/5 gradient4">
         <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-4 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">

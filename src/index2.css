@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*-----Forget(card bg),Login(Card bg),Signup(card bg)-----*/
 .gradient {
   background-color: #d9edff;
   background-image: radial-gradient(
@@ -10,6 +12,76 @@
     ),
     radial-gradient(at 82% 65%, #a5fecb 0, transparent 85%);
 }
+/*-----Forget(card bg),Login(Card bg),Signup(card bg)-----End*/
+
+/*---------Next pages button--------*/
+.button3 {
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  color: #36395A;
+  cursor: pointer;
+  height: 48px;
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+.button3:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.button3:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+.button3:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  background-color: #87b9d6;
+  transform: translateY(2px);
+}
+/*--------Next pages button------End*/
+
+.gradient3 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(0deg, rgba(218,237,237,1) 0, rgba(124,191,170,0.9) 64%, rgba(32,35,35,1) 100%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background: -moz-linear-gradient(90deg, rgba(218,237,237,1) 0, rgba(124,191,170,0.9) 64%, rgba(32,35,35,1) 100%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background: linear-gradient(90deg, rgba(218,237,237,1) 0, rgba(124,191,170,0.9) 64%, rgba(32,35,35,1) 100%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background-position: 50% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto, cover;
+  background-size: auto auto, cover;
+}
+.gradient4{
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(0deg, rgb(73, 82, 85) 0, rgba(184, 145, 191, 0.788) 64%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background: -moz-linear-gradient(90deg, rgba(218,237,237,1) 0, rgba(178, 124, 191, 0.322) 64%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background: linear-gradient(90deg, rgba(218,237,237,1) 0, rgba(189, 192, 187, 0.802) 64%, rgba(32,35,35,1) 100%), url("https://images.wallpaperscraft.com/image/single/light_bulb_incandescent_light_218384_3840x2400.jpg");
+  background-position: 10% 60%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+
+/*-------ProductPage(div bg)-------*/
 .gradient2 {
   background-color: #d9fffac2;
   background-image: radial-gradient(
@@ -31,7 +103,9 @@
     background-position: 0% 50%;
   }
 }
+/*-------ProductPage(div bg)-------End*/
 
+/*------CartList(btn-bg),Checkout(btn-bg),Emptycart(btn-bg)------*/
 .b23 {
   background: #ff5151;
   color: whitesmoke;
@@ -46,19 +120,9 @@ h1.text {
   text-align: center;
   padding-left: 4px;
 }
+/*------CartList(btn-bg),Checkout(btn-bg),Emptycart(btn-bg)------End*/
 
-@keyframes greenPulse {
-  from {
-    -webkit-box-shadow: 2px 0px 10px #fb4b4b;
-  }
-  50% {
-    -webkit-box-shadow: 2px 0px 10px #e33bb880;
-  }
-  to {
-    -webkit-box-shadow: 2px 0px 15px #db0004;
-  }
-}
-
+/*-----Page(pages-btn)------*/
 .button {
   background: rgba(140, 143, 119, 0.753);
   display: inline-block;
@@ -67,7 +131,6 @@ h1.text {
   padding: 10px 20px;
   border-radius: 10px;
 }
-
 .button:hover {
   animation: pulsate 1s ease-in-out;
 }
@@ -76,7 +139,9 @@ h1.text {
     box-shadow: 0 0 5px #5ddcff, 0 0 10px #843eec;
   }
 }
+/*-----Page(pages-btn)------End*/
 
+/*-----CartPage,Page,Productdetail,UserProvider-(loader)------*/
 .loader2 {
   border: 16px solid #1e1e1c;
   border-top: 16px solid #ae9f48;
@@ -86,7 +151,6 @@ h1.text {
   animation: spin 2s linear infinite;
   box-shadow: 0px 0px 15px #ae9f48;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -98,83 +162,9 @@ h1.text {
     transform: rotate(360deg);
   }
 }
+/*-----CartPage,Page,Productdetail,UserProvider-(loader)------End*/
 
-.con {
-  display: grid;
-  place-items: center;
-  position: relative;
-  height: 550px;
-  width: 900px;
-  background: slate;
-  border-radius: 10px;
-  overflow: hidden;
-  filter: blur 15px;
-}
-.con::after {
-  position: absolute;
-  content: "";
-  top: 150px;
-  left: 50px;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  transform: scale(0.9) translateZ(0);
-  background-size: 200%, 200%;
-  background: linear-gradient(
-    to left,
-    #8bb1ee,
-    #a3f5bb,
-    #ff66bf,
-    #fffcb3,
-    #ff5770,
-    #d9e7db,
-    #8f8f8f,
-    #3de1b8,
-    #ff6770
-  );
-  animation: animateGlow 1s linear infinite;
-}
-@keyframes animateGlow {
-  0% {
-    background-position: 0%, 50%;
-  }
-  100% {
-    background-position: 200%, 50%;
-  }
-}
-.con span {
-  text-shadow: red -2px 0, cyan 2px 0;
-}
-
-.shadowBtn {
-  border: 2px solid white;
-  border-radius: 10px;
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-}
-.shadowBtn:hover {
-  background-color: white;
-  color: black;
-  transition: 1s ease;
-}
-.shadowBtn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 15px;
-  background: transparent;
-  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
-  filter: blur(8px);
-  transition: 1s ease;
-}
-
-.body4 {
-  height: 100%;
-}
-
-
+/*-------Error404-----*/
 .error {
   text-align: center;
   font-family: "Gilda Display", serif;
@@ -185,7 +175,6 @@ h1.text {
   animation: noise 2s linear infinite;
   overflow: default;
 }
-
 .error:after {
   content: "404";
   font-family: "Gilda Display", serif;
@@ -203,7 +192,6 @@ h1.text {
   color: blue;
   animation: noise-1 0.2s linear infinite;
 }
-
 .info {
   text-align: center;
   font-family: "Gilda Display", serif;
@@ -214,14 +202,12 @@ h1.text {
   color: #3eeb13d5;
   line-height: 60px;
 }
-
 .error:before {
   content: "404";
   font-family: "Gilda Display", serif;
   font-size: 125px;
   font-style: italic;
   text-align: center;
-
   line-height: 60px;
   margin: auto;
   position: absolute;
@@ -233,7 +219,6 @@ h1.text {
   color: red;
   animation: noise-2 0.2s linear infinite;
 }
-
 @keyframes noise-1 {
   0%,
   20%,
@@ -258,7 +243,6 @@ h1.text {
     left: 2px;
   }
 }
-
 @keyframes noise-2 {
   0%,
   20%,
@@ -283,7 +267,6 @@ h1.text {
     left: -2px;
   }
 }
-
 @keyframes noise {
   0%,
   3%,
@@ -303,7 +286,6 @@ h1.text {
     transform: scaleX(1.5);
   }
 }
-
 @keyframes noise-3 {
   0%,
   3%,
@@ -323,59 +305,12 @@ h1.text {
     transform: scaleX(10) rotate(60deg);
   }
 }
-
-.search-input {
-  outline: none;
-  filter: drop-shadow(4px 4px 2px #4f4f4f);
-  border: none;
-  background: #d9d9d9;
-  width: 0;
-  padding: 0;
-  color: #000000;
-  float: left;
-  font-size: 20px;
-  transition: 0.3s;
-  border-radius: 10px;
-  line-height: 40px;
-}
-.search-input::placeholder {
-  color: #8f8f8f;
-}
-.search-btn {
-  color: #fff;
-  filter: drop-shadow(8px 8px 4px #4f4f4f);
-  float: right;
-  width: 50px;
-  height: 40px;
-  border-radius: 10px;
-  background: #545454;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.search-input:focus,
-.search-input:not(:placeholder-shown) {
-  width: 24px;
-  padding: 0 6px;
-}
-.search-box:hover > .search-input {
-  width: 240px;
-  padding: 0 6px;
-}
-.search-box:hover > .search-btn,
-.search-input:focus + .search-btn,
-.search-input:not(:placeholder-shown) + .search-btn {
-  background: #fff;
-  color: #5e14cc;
-}
-
 .span {
   filter: drop-shadow(3px 3px 1px #ff0000);
 }
+/*-------Error404-----End*/
 
-/*mian footer */
+/*--------Main footer--------*/
 .main-footer{
   position: relative;
   background: rgba(15,20,24,255);
@@ -383,7 +318,6 @@ h1.text {
 .btmfooter{
   background: rgba(15,20,24,255);
 }
-
 .footer-content{
   position: relative;
   padding: 85px 0px 80px 0px;
@@ -484,9 +418,9 @@ h1.text {
 .footer-content .contact-widget .footer-title{
   margin-bottom: 29px;
 }
+/*--------Main footer--------End*/
 
-/* Stylish button */
-
+/* About-------Stylish button------Contact*/
 .btn42 {
   border: 5em;
   cursor: pointer;
@@ -521,3 +455,4 @@ h1.text {
 .btn42:hover .text {
   background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
 }
+/*--------Main footer--------*/

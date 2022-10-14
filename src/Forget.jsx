@@ -4,7 +4,7 @@ import { Formik, Form } from "formik";
 import Input from "./Input";
 import * as Yup from "yup";
 
-function Forget() {
+function Forget({isValid}) {
   function calloginApi(values) {
     console.log("Email", values.email);
   }
@@ -20,7 +20,7 @@ function Forget() {
   
   return (
     <>
-      <div className="flex items-center justify-center px-2 py-28 lg:py-44 h-max gradient">
+      <div className="flex items-center justify-center px-2 py-28 lg:py-44 h-max gradient4">
         <Formik
           initialValues={initialValues}
           validateOnMount
@@ -46,8 +46,9 @@ function Forget() {
                   className="p-2 rounded-sm"
                 />
               <div className="flex flex-col mt-4 lg:space-x-2 lg:flex-row">
-                <button
-                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:bg-red-400 disabled:cursor-not-allowed"
+                  <button
+                    disabled={!isValid}
+                  className="p-2 px-4 mt-2 font-semibold text-white bg-green-500 rounded-sm shadow-sm shadow-zinc-900 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   Reset Password
                 </button>

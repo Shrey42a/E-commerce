@@ -37,7 +37,7 @@ function calloginApi(values, bag) {
 export function Login({ handleSubmit, values, errors, isValid, handleChange, handleBlur }) {
   return (
     <>
-      <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient"> 
+      <div className="flex items-center justify-center px-2 py-10 lg:py-20 h-4/5 gradient4"> 
         <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
           <div className="px-2 py-8 shadow-sm shadow-zinc-700 bg10">
             <h1 className="px-8 py-4 font-sans text-3xl font-semibold">

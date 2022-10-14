@@ -15,7 +15,7 @@ function Error404() {
           </div>
           </div>
           <Link title="Homepage" to="/page">
-          <button className="btnn bg10">Go Home</button>
+          <button className="button3">Go Home</button>
         </Link>
           </div>
       </div>
