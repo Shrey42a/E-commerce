@@ -2,31 +2,39 @@ import React, {useState, useEffect}  from "react";
 import { Link } from "react-router-dom";
 import CartRow from "./CartRow";
 import EmptyCart from "./EmptyCart";
+import { withCart } from "./withProvider";
 
-function CartList({ cart, updateCart, product}) {
-
-  const [localCart, setLocalCart] = useState(cart);
-
+function CartList({ cart, updateCart}) {
+  const [quantityMap, setQuantityMap] = useState(cart);
+  const cartToQuantityMap = () =>
+    cart.reduce(
+      (m, cartItem) => ({ ...m, [cartItem.product.id]: cartItem.quantity }),
+      {}
+    );
   useEffect(function () {
-    setLocalCart(cart);
-  }, [cart]);
-
-  function handleRemove(productId) {
-    const newCart = {...cart}
-    delete newCart[productId]
-    updateCart(newCart);
-  }
+    setQuantityMap(cartToQuantityMap);
+  },
+    [cart]);
 
   function handleChange(productId, newValue) {
-    const newLocalcart = { ...localCart, [productId]: newValue };
-    setLocalCart(newLocalcart);
+    const newQuantityMap = { ...quantityMap, [productId]: newValue };
+    setQuantityMap(newQuantityMap);
+  }
+
+  function handleRemove(productId) {
+    const newQuantityMap = cartToQuantityMap();
+    delete newQuantityMap[productId];
+    updateCart(newQuantityMap);
   }
 
   function updateMyCart() {
-    updateCart(localCart);
+    updateCart(quantityMap);
+    console.log("Quantity", quantityMap);
   }
 
-   if (product == "") {
+  console.log("product id", cart);
+
+   if (cart == "") {
     return (
       <>
         <EmptyCart></EmptyCart>
@@ -45,9 +53,15 @@ function CartList({ cart, updateCart, product}) {
           <div className="flex ml-2 grow">Total</div>
       </div>
 
-      {product.length > 0 && product.map(function (items){
+      {cart.map(function (cartItem){
         return (
-            <CartRow key={items.id} onRemove={handleRemove} onChange={handleChange} quantity={localCart[items.id]} product={product} {...items} ></CartRow>
+          <CartRow
+            key={cartItem.product.id}
+            onRemove={handleRemove}
+            onChange={handleChange}
+            quantity={quantityMap[cartItem.product.id] || cartItem.quantity}
+            product={cartItem.product} >
+          </CartRow>
       );
           })}
       
@@ -72,11 +86,11 @@ function CartList({ cart, updateCart, product}) {
             <div className="p-4">
               <div className="flex justify-between p-2 border-b border-gray-400">
                 <h2>Subtotal</h2>
-                <h2>$13</h2>
+              <h2>$ 560</h2>
               </div>
               <div className="flex justify-between p-2 border-b border-gray-400">
                 <h2>Total</h2>
-                <h2>$138</h2>
+                <h2>$1238</h2>
               </div>
             </div>
             <div className="p-3">
@@ -94,4 +108,4 @@ function CartList({ cart, updateCart, product}) {
     </>  
   );
 }
-export default CartList;
+export default withCart(CartList);

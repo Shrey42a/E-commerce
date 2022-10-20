@@ -4,7 +4,6 @@ import { GiSplitCross } from "react-icons/gi";
 import { withAlert } from "./withProvider";
 
 function Alerts({ alert, removeAlert }) {
-
     useEffect(function () {
         if (alert) {
             const stopTimer = setTimeout(removeAlert, 6 * 1000);
@@ -13,12 +12,10 @@ function Alerts({ alert, removeAlert }) {
             };
         }
    }, [alert])
-
     if (!alert) {
-        return <></>;
+      return <></>;
     }
     const { message, type } = alert;
-    
     let color;
     let color2;
     let textcolor;

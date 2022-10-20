@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductData } from "./Api";
 import Social from "./Social";
-import Error2 from "./Error2"
+import Error404 from "./Error404"
 import NewLoading from "./NewLoading";
+import { withCart } from "./withProvider";
 
-function ProductDetail({ onAddToCart }) {
+function ProductDetail({ AddToCart }) {
   const id = +useParams().id;
   const [product, setProduct] = useState();
   const [count, setCount] = useState(1);
@@ -13,14 +14,12 @@ function ProductDetail({ onAddToCart }) {
 
   useEffect(
     function () {
-      const p = getProductData(id);
-      p.then(function (response) {
-        setProduct(response.data);
+      getProductData(id).then(function (response) {
+        setProduct(response);
         setLoading(false);
-      });
-      p.catch(function (error) {
+      }).catch(function (error) {
         setLoading(false);
-        return <Error2 />;
+        return <Error404 />;
       })
     },
     [id]
@@ -30,8 +29,17 @@ function ProductDetail({ onAddToCart }) {
     setCount(+event.target.value);
   }
   function handleButtonClick() {
-    onAddToCart(+id, +count);
+    AddToCart(+id, +count);
     console.log("product id", id, "count", count);
+  }
+
+   function handleInputInitial() {
+    setCount(1);
+    setLoading(true);
+  }
+
+  if (!product) {
+    return <Error404 />;
   }
 
   if (loading) {
@@ -94,7 +102,7 @@ function ProductDetail({ onAddToCart }) {
               </div>
               <div className="flex items-center mt-2 space-x-4">
                 <button className="shadow-sm button3 shadow-zinc-600">Buy Now</button>
-                <Link title="Products" to="/page">
+                <Link title="Products" to="/page" onClick={handleInputInitial}>
                   <button className="p-2 px-3 py-1 text-lg font-semibold text-white bg-gray-400 rounded-lg shadow-sm button3 shadow-zinc-700 hover:bg-gray-600 outline-0">
                     Back
                   </button>
@@ -105,7 +113,7 @@ function ProductDetail({ onAddToCart }) {
         </div>
         <div className="flex items-center justify-around p-2 mt-2 space-x-2">
           {id > 1 && (
-            <Link title="Prev" to={"/productdetail/" + (id - 1)}>
+            <Link title="Prev" to={"/productdetail/" + (id - 1)} onClick={handleInputInitial}>
               <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm button3 outline-0 shadow-zinc-700">
                 Prev
               </button>
@@ -115,7 +123,7 @@ function ProductDetail({ onAddToCart }) {
           <Social />
 
           {id < 100 && (
-            <Link title="Next" to={"/productdetail/" + (id + 1)}>
+            <Link title="Next" to={"/productdetail/" + (id + 1)} onClick={handleInputInitial}>
               <button className="px-3 py-1 mb-2 text-lg font-semibold text-black rounded-lg shadow-sm outline-0 button3 text-md shadow-zinc-700">
                 Next
               </button>
@@ -126,4 +134,4 @@ function ProductDetail({ onAddToCart }) {
     </>
   );
 }
-export default ProductDetail;
+export default withCart(ProductDetail);
