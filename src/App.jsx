@@ -19,32 +19,17 @@ import Alerts from "./Alerts";
 import Checkout from "./Checkout";
 import UserProvider from "./Providers/UserProvider";
 import AlertProvider from "./Providers/AlertProvider";
+import CartProvider from "./Providers/CartProvider";
 
 function App() {
-  const savedDataString = localStorage.getItem("My-cart") || "{}";
-  const savedData = JSON.parse(savedDataString);
-  const [cart, setCart] = useState(savedData);
-  
-  function handleAddToCart(productId, count) {
-    const oldCount = cart[productId] || 0;
-    const newCart = { ...cart, [productId]: oldCount + count };
-    updateCart(newCart);
-  }
-    function updateCart(newCart) {
-      setCart(newCart);  
-    const cartString = JSON.stringify(newCart);
-    localStorage.setItem("My-cart", cartString);
-    }
-  const totalCount = Object.keys(cart).reduce(function (output, current) {
-    return output + cart[current];
-  }, 0);
 
   return (
     <>
       <div>
         <UserProvider>
+          <CartProvider>
         <AlertProvider>
-        <Navbar productCount={totalCount} />
+        <Navbar />
             <Header />
             <Alerts />
         <div className="grow">
@@ -57,16 +42,17 @@ function App() {
             <Route path="/checkout" element={<Loggeduser><Checkout /></Loggeduser>}></Route>
             <Route path="/contact" element={<Loggeduser><Contact /></Loggeduser>}></Route>
             <Route path="/forget" element={<Authuser><Forget /></Authuser>}></Route>
-            <Route path="/cart" element={<Loggeduser><CartPage cart={cart} updateCart={updateCart} /></Loggeduser>}></Route>
+            <Route path="/cart" element={<Loggeduser><CartPage /></Loggeduser>}></Route>
             <Route path="*" element={<Error404 />}></Route>
             <Route
               path="/productdetail/:id"
-              element={<Loggeduser><ProductDetail onAddToCart={handleAddToCart} /></Loggeduser>}
+              element={<Loggeduser><ProductDetail /></Loggeduser>}
             ></Route>
           </Routes>
         </div>
           <Footer />
-          </AlertProvider>
+            </AlertProvider>
+            </CartProvider>
           </UserProvider>
       </div>
     </>

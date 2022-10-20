@@ -4,8 +4,8 @@ import { withFormik } from "formik";
 import * as Yup from "yup";
 import Input from "./Input";
 import axios from "axios";
-import withUser from "./withUser";
-import withAlert from "./withAlert";
+import {withUser} from "./withProvider";
+import { withAlert } from "./withProvider";
 
 
 function callSignupApi(values, bag) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { withUser } from "./withProvider";
+import { withCart, withUser } from "./withProvider";
 
-function Navbar({ productCount, setUser, user }) {
+function Navbar({ totalCount, setUser, user }) {
 
   function handleLogout() {
     localStorage.removeItem("token")
@@ -29,7 +29,7 @@ function Navbar({ productCount, setUser, user }) {
                 <span className="line line3"></span>
                 <span className="line line4"></span>
               </div>
-              <ul className="-mt-6 menu-items">
+              <ul className="-mt-6 menu-items lis">
                 <li><img className="w-16 h-16 lg:hidden" src="https://media.discordapp.net/attachments/933654325127938101/1029717959393943632/IMG_20221012_165911-removebg-preview.png"></img></li>
                 {user && <li>
                   <Link to="/page">
@@ -63,7 +63,7 @@ function Navbar({ productCount, setUser, user }) {
                   <svg className="bi bi-cart3" xmlns="http://www.w3.org/2000/svg" width="48" height="56" fill="currentColor" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="#1c1c1c"></path> </svg>
                 
                 <span className="w-2 -mt-20 font-semibold text-gray-900">
-                  {productCount}
+                  {totalCount}
                 </span>
               </div></Link>
             </div>
@@ -73,4 +73,4 @@ function Navbar({ productCount, setUser, user }) {
     </>
   );
 }
-export default withUser(Navbar);
+export default withUser(withCart(Navbar));

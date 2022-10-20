@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Input from "./Input";
 import axios from "axios";
-import withUser from "./withUser";
-import withAlert from "./withAlert";
+import {withUser} from "./withProvider";
+import {withAlert} from "./withProvider";
 
 function calloginApi(values, bag) {
   axios.post("https://myeasykart.codeyogi.io/login", { email: values.email, password: values.password, })
