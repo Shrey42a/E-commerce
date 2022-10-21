@@ -36,7 +36,7 @@ function Checkout() {
        
        <div class="w-full lg:ml-32 lg:items-start items-center flex flex-col">
        <label class="mr-44">Address</label>
-       <textarea class="w-4/5 border border-gray-400 p-2" placeholder="Address"></textarea>
+       <textarea class="w-4/5 border border-gray-400 p-3" placeholder="Address"></textarea>
       </div>
        
        <div class="w-full lg:ml-32 lg:items-start items-center flex flex-col">
